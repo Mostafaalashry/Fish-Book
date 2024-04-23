@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/*
 public class APIServices{
    public static let shared = APIServices()
     
@@ -53,3 +53,4 @@ public class APIServices{
     
     
 }
+*/
