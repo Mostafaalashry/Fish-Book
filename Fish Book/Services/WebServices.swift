@@ -40,7 +40,9 @@ struct SignUpResponse : Codable
     let token : String?
 
 }
-
+struct ResponseData: Codable {
+    let url: String
+}
 
 class WebServices {
     
@@ -154,8 +156,9 @@ class WebServices {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             return
         }
-        
-        guard let url = URL(string: "http://localhost:8080/uploadImage") else {
+        //http://localhost:8080/api/image/uploadProductImage
+        //http://localhost:8080/uploadImage
+        guard let url = URL(string: "http://localhost:8080/api/image/uploadProductImage") else {
             return
         }
         
@@ -207,6 +210,62 @@ class WebServices {
         }
         task.resume()
     }
+    
+    /*
+    func uploadImagee(image: UIImage ,imageURLL:String ,uploadSucsess:Bool ) {
+                guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+                    return
+                }
+                
+                guard let url = URL(string: "http://localhost:8080/uploadImage") else {
+                    return
+                }
+                
+                let boundary = UUID().uuidString
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                
+                var body = Data()
+
+               
+                body.append("--\(boundary)\r\n".data(using: .utf8)!)
+
+                
+                body.append("Content-Disposition: form-data; name=\"image\";     filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+                body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+                body.append(imageData)
+                body.append("\r\n".data(using: .utf8)!)
+
+                body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+                
+                request.httpBody = body
+                
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    if let error = error {
+                        print("Error: \(error)")
+                    } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                        if let responseData = data {
+                            do {
+                                let decodedResponse = try JSONDecoder().decode(ResponseData.self, from: responseData)
+                                 imageURLL =  String(decodedResponse.url)
+                                
+                                print("Image URL: \(decodedResponse.url)")
+                                
+                                DispatchQueue.main.async {
+                                    
+                                    uploadSucsess = true
+                                }
+                            } catch {
+                                print("Error decoding response: \(error)")
+                            }
+                        }
+                    }
+                }
+                task.resume()
+            }
+    */
 
     func fetchDataWithToken<T: Codable>(urlString: String, token: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
@@ -245,14 +304,14 @@ class WebServices {
         }.resume()
     }
     
-    func sendID(urlString: String,  token: String , completion: @escaping (Result<Int, Error>) -> Void) {
+    func sendID(httpMethod : String,urlString: String,  token: String , completion: @escaping (Result<Int, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "\(httpMethod)"
         request.addValue("text/plain", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         

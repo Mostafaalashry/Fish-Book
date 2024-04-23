@@ -8,37 +8,38 @@
 import SwiftUI
 
 struct MyProdectItem: View {
-    let product  = dataa.allProducts.first
+    let product  :MyProductModel
+    @EnvironmentObject var vm :MyProductViewModel
 
     var body: some View {
         
             HStack(spacing: 0){
                 VStack(alignment: .leading , spacing: 0){
                   
-                    Text(product!.createdOn)
+                    Text( product.updatedOn ?? product.createdOn)
                         .font(.system(size: 16,weight: .light,design: .default))
                         //.foregroundColor(Color("Primary Blue"))
                         .padding(.leading)
                         .padding(.top)
-                        Text(product!.title)
+                        Text(product.title)
                             .font(.system(size: 25,weight: .bold,design: .serif))
                             .foregroundColor(Color("Primary Blue"))
                             .padding(.leading)
                     
                     
-                    Text(product!.content)
+                    Text(product.content)
                         .font(.system(size: 16,weight: .light,design: .default))
                         .padding(.horizontal)
                         .padding(.top,5)
 
-                    Text("$ " + String(product!.price))
+                    Text("$ " + String(product.price))
                         .font(.system(size: 18,weight: .bold,design: .serif))
                         .padding(.leading)
                         .padding(.top,5)
 
                 }
                 
-                Image(product!.imageUrl)
+                Image(product.imageUrl)
                     .resizable()
                     .frame(width: 150 , height: 150 ,alignment: .center)
                     .scaledToFit()
@@ -54,12 +55,14 @@ struct MyProdectItem: View {
                
                 Menu(content: {
                     Button {
-                        print("delete")
+                        vm.deleteMyProduct( product: product)
                     } label: {
-                        Text("delete")
+                        
+                        Text("Delete")
+                            .foregroundColor(Color.red)
                     }
                     Button {
-                        print("delete2")
+                        print("Update")
                     } label: {
                         Text("delete")
                     }
@@ -81,10 +84,13 @@ struct MyProdectItem: View {
             .edgesIgnoringSafeArea(.all)
                 .ignoresSafeArea(.all)
     }
+    
+    
 }
-
+/*
 struct MyProdectItem_Previews: PreviewProvider {
     static var previews: some View {
         MyProdectItem()
     }
 }
+*/

@@ -53,7 +53,7 @@ struct ProfileView: View {
                 }
                 
                 Picker(selection: $selection, label: Text("")) {
-                    Text("View 1").tag(0)
+                    Text("MyProducts").tag(0)
                     Text("View 2").tag(1)
                     Text("View 3").tag(2)
                 }
@@ -62,7 +62,7 @@ struct ProfileView: View {
                 Spacer()
                 
                 if selection == 0 {
-                    View2()
+                    MyProductsView()
                 } else if selection == 1 {
                     View2()
                 } else {

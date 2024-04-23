@@ -28,7 +28,9 @@ struct FavouriteProductItem: View {
                             .foregroundColor(Color.blue)
                         
                         Button {
+                            
                             vm.deleteFromFavourite(product: produuct)
+                            
                         } label: {
                            Image(systemName: "trash.circle.fill")
                                 .font(.system(size: 30 ,weight: .semibold ,design: .serif))

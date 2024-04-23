@@ -1,29 +1,29 @@
 //
-//  FavouriteProductsViewModel.swift
+//  MyProductViewModel.swift
 //  Fish Book
 //
-//  Created by mostafa on 16/04/2024.
+//  Created by mostafa on 23/04/2024.
 //
 
-import Foundation
 
 
+//http://localhost:8080/api/products/like
 
 import Foundation
 import SwiftUI
 
-class FavouriteProductsViewModel : ObservableObject{
+class MyProductViewModel : ObservableObject{
     
     
-    @Published  var favouriteProductss :[ProductModel] = []
+    @Published  var myProducts :[MyProductModel] = []
    // @Published  var favouriteProductss  = dataa.allProducts
     
     func fetchProducts(){
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
-        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/likedProducts", token: token) { (result: Result<[ProductModel], Error>) in
+        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/getProductsThatIOwn", token: token) { (result: Result<[MyProductModel], Error>) in
             switch result {
                 case .success(let data):
-                self.favouriteProductss = data
+                self.myProducts = data
                
                 case .failure(let error):
                 print(error.localizedDescription)
@@ -31,11 +31,11 @@ class FavouriteProductsViewModel : ObservableObject{
         }
     }
     
-    func deleteFromFavourite(product:ProductModel){
+    func deleteMyProduct(product:MyProductModel){
         var index  = 0
-            for producttt in favouriteProductss {
+            for producttt in myProducts {
                 if producttt.id == product.id {
-                    WebServices().sendID(httpMethod:"PUT",urlString: "http://localhost:8080/api/products/dislike\(product.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+                    WebServices().sendID(httpMethod:"DELETE",urlString: "http://localhost:8080/api/products/\(product.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
                         switch result {
                         case .success(let success):
                           
@@ -45,7 +45,7 @@ class FavouriteProductsViewModel : ObservableObject{
                         }
                     }
 
-                    favouriteProductss.remove(at: index)
+                    myProducts.remove(at: index)
                     return // Exit the function after removing the item
                 }
                 index = index + 1

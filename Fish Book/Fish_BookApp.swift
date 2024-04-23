@@ -11,11 +11,13 @@ import SwiftUI
 struct Fish_BookApp: App {
     @StateObject var vm = AllProductViewModel()
     @StateObject var vmF = FavouriteProductsViewModel()
+    @StateObject var vmM = MyProductViewModel()
     var body: some Scene {
         WindowGroup {
             WelcomeView()
                 .environmentObject(vm)
                 .environmentObject(vmF)
+                .environmentObject(vmM)
         }
     }
 }

@@ -83,7 +83,7 @@ struct ProductDetailsView: View {
                     Button {
                         var urlString  = isFavourite ? "http://localhost:8080/api/products/like\(product.id) " : "http://localhost:8080/api/products/dislike\(product.id)"
                         
-                        WebServices().sendID(urlString: urlString, token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+                        WebServices().sendID(httpMethod:"PUT",urlString: urlString, token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
                             switch result {
                             case .success(let success):
                                 isFavourite.toggle()

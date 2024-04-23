@@ -7,9 +7,7 @@ import SwiftUI
 
 
 
-struct ResponseData: Codable {
-    let url: String
-}
+
 
 struct AddProductView: View {
     @State private var selectedImage: UIImage?
@@ -44,38 +42,57 @@ struct AddProductView: View {
                 
                 
                 if let image = selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                       
-                        .cornerRadius(10)
+                    HStack{
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 130 , height: 130 , alignment: .leading)
+                        //.foregroundColor(Color("SecondaryBlue"))
+                            .padding(.leading,10)
+                           
                         
-                    
+                        Spacer()
+                        
+                    }
+                    .padding(.leading,30)
                 } else {
-                   // Text("No image selected")
-                    Image(systemName: "photo")
-                        .resizable()
-                       // .scaledToFit()
-                        .foregroundColor(Color("SecondaryBlue"))
-
+                    // Text("No image selected")
+                    HStack{
+                        
+                        VStack{
+                            Image(systemName: "photo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 130 , height: 130 , alignment: .leading)
+                                .foregroundColor(Color("SecondaryBlue"))
+                                .padding(.leading,5)
+                            
+                            Button(action: {
+                                self.isShowingImagePicker = true
+                            }) {
+                                Text("Select Image")
+                                    .foregroundColor(Color("Primary Blue"))                }
+                            .padding(.bottom)
+                            .sheet(isPresented: $isShowingImagePicker) {
+                                ImagePicker(selectedImage: self.$selectedImage)
+                            }
+                        }
+                        Spacer()
+                        
+                    }
+                    .padding(.leading,30)
                 }
                 
                 
-                
-                Button(action: {
-                    self.isShowingImagePicker = true
-                }) {
-                    Text("Select Image")
-                        .foregroundColor(Color("Primary Blue"))                }
-                .sheet(isPresented: $isShowingImagePicker) {
-                    ImagePicker(selectedImage: self.$selectedImage)
-                }
+               
                 
                 Button(action: {
                     // Call API to upload image here
                     if let image = self.selectedImage {
                         uploadImage(image: image) 
-                 }
+                    }else{
+                        print("uploadImage doesnot pegin")
+                    }
                 }) {
                     Text("Send Image")
                 }
@@ -86,6 +103,7 @@ struct AddProductView: View {
                     Text("Image sent successfully!")
                         .foregroundColor(.green)
                 }
+                
                 
             }
             .frame(maxWidth: .infinity)
@@ -110,7 +128,9 @@ struct AddProductView: View {
                     }
                     
                     .pickerStyle(.segmented)
-                    .padding(.horizontal)
+                    .padding()
+                   
+                   
                     .background(
                         
                         RoundedRectangle(cornerRadius: 8)
@@ -119,12 +139,22 @@ struct AddProductView: View {
                             .padding(.horizontal)
                         
                     )
-                    
+                    .padding(.horizontal,8)
                     
                 }
                 
                 
-                HStack{
+                VStack{
+                    HStack{
+                        Text("Name of product")
+                            .padding(.trailing,30)
+                            .font(.system(size: 18,weight: .bold))
+                            .foregroundColor(Color("Primary Blue"))
+                        Spacer()
+                    }
+                    .padding(.leading,25)
+                    
+                    
                     VStack{
                         
                         
@@ -134,56 +164,84 @@ struct AddProductView: View {
                             .frame(minWidth: 0 ,maxWidth: .infinity)
                             .padding(15)
                             .foregroundColor(Color("Primary Blue"))
-                    }
-                    .background(Color("SecondaryBlue"))
-                    .cornerRadius(20)
-                    .padding(.horizontal  )
-                    VStack{
-                        Text("Name of product")
-                            .padding(.trailing,30)
-                            .font(.system(size: 18,weight: .bold))
+                        Rectangle()
+                            .frame(height: 1)
                             .foregroundColor(Color("Primary Blue"))
                     }
+                  //  .background(Color("SecondaryBlue"))
+                    .cornerRadius(20)
+                    .padding(.horizontal ,7  )
+                    
                     
                 }
                 HStack{
                     
                     VStack{
+                      
+                        HStack{
+                            Text("Price of product")
+                                
+                                .font(.system(size: 18,weight: .bold))
+                                .foregroundColor(Color("Primary Blue"))
+                            Spacer()
+                           
+                        }
+                        .padding(.leading,15)
+                        .padding(.top,15)
+                        
                         TextField("Price", text: $price)
                             .keyboardType(.decimalPad)
                             .frame(minWidth: 0 ,maxWidth: .infinity)
                             .padding(15)
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color("Primary Blue"))
                         
                     }
-                    .background(Color("SecondaryBlue"))
+                   // .background(Color("SecondaryBlue"))
                     .cornerRadius(20)
-                    .padding(.horizontal  )
+                    .padding(.horizontal ,10 )
                     
-                    Text("Price of product")
-                        .padding(.trailing,30)
-                        .font(.system(size: 18,weight: .bold))
-                        .foregroundColor(Color("Primary Blue"))
+                   
                     
                     
                     
                     
                 }.frame(maxWidth: .infinity)
                 VStack(alignment: .leading){
-                    Text(" Description")
-                        .padding()
-                        .font(.system(size: 22,weight: .bold))
-                        .foregroundColor(Color("Primary Blue"))
+                    /*
+                     Text(" ")
+                     .padding()
+                     .font(.system(size: 22,weight: .bold))
+                     .foregroundColor(Color("Primary Blue"))
+                     */
                     
-                    TextField("Description", text: $descrription, axis: .vertical)
-                        .textInputAutocapitalization(.none)
-                    
-                        .disableAutocorrection(true)
-                        .frame(minWidth: 0 ,maxWidth: .infinity)
-                        .padding(15)
+                    HStack{
+                        Text("Description")
+                        
+                            .font(.system(size: 18,weight: .bold))
+                            .foregroundColor(Color("Primary Blue"))
+                        Spacer()
+                        
+                    }
+                    .padding(.leading,15)
+                    .padding(.top,15)
+                    VStack{
+                        TextField("Description", text: $descrription, axis: .vertical)
+                            .textInputAutocapitalization(.none)
+                        
+                            .disableAutocorrection(true)
+                            .frame(minWidth: 0 ,maxWidth: .infinity)
+                            .padding(15)
+                        
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color("Primary Blue"))
+                    }
                 }
-                .background(Color("SecondaryBlue"))
+               // .background(Color("SecondaryBlue"))
                 .cornerRadius(20)
-                .padding(.horizontal  )
+                .padding(.horizontal ,10 )
                 
                 
                 
@@ -195,6 +253,7 @@ struct AddProductView: View {
                    
                 } label: {
                     Text("publish")
+                        
                         .font(.system(size: 20,weight: .semibold))
                         .foregroundColor(.white)
                         
@@ -202,14 +261,14 @@ struct AddProductView: View {
                         
                 }
                     
-                    .padding(.vertical)
-                    .frame(width: 80, height: 50, alignment: .center)
+                    
+                    .frame(width: 315, height: 45, alignment: .center)
                     . background(Color("Primary Blue"))
-                    .cornerRadius(12)
+                    .cornerRadius(6)
                     .padding(.horizontal)
                     .opacity( canProssesd() ? 1 : 0.5)
                     .disabled(!(canProssesd() ))
-                
+                    .padding(.vertical,30)
                 
             }.padding(.horizontal)
             
@@ -228,7 +287,6 @@ struct AddProductView: View {
           }
             
    
-
      func sendProduct() {
             // Call the first function with a completion handler
          uploadImage {
@@ -239,11 +297,11 @@ struct AddProductView: View {
 
     func uploadImage(completion: @escaping () -> Void) {
         // Simulate a long-running task
-        print("First function started")
+       
         DispatchQueue.global().async {
             if let image = self.selectedImage {
                 uploadImage(image: image)
-                print("First function completed")
+               
                 
                 // Call the completion handler once the first function is completed
                 DispatchQueue.main.async {
@@ -257,18 +315,20 @@ struct AddProductView: View {
              addProductVM.description=descrription
              addProductVM.price = Double(price) ?? 0.0
              addProductVM.category = type
-             
+             print(" \(addProductVM.imageURL)...imageURL")
              addProductVM.addProduct()
-             print("fuunc publish")
+             
         }
     
 
     func uploadImage(image: UIImage  ) {
-                guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+                guard let image = image.jpegData(compressionQuality: 0.8) else {
+                    print("cant compress image")
                     return
                 }
                 
-                guard let url = URL(string: "http://localhost:8080/uploadImage") else {
+                guard let url = URL(string: "http://localhost:8080/api/image/uploadProductImage") else {
+                    print("invalid urrl for image")
                     return
                 }
                 
@@ -286,7 +346,7 @@ struct AddProductView: View {
                 
                 body.append("Content-Disposition: form-data; name=\"image\";     filename=\"image.jpg\"\r\n".data(using: .utf8)!)
                 body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-                body.append(imageData)
+                body.append(image)
                 body.append("\r\n".data(using: .utf8)!)
 
                 body.append("--\(boundary)--\r\n".data(using: .utf8)!)
@@ -301,7 +361,9 @@ struct AddProductView: View {
                             do {
                                 let decodedResponse = try JSONDecoder().decode(ResponseData.self, from: responseData)
                                 addProductVM.imageURL =  String(decodedResponse.url)
-                                print("Image URL: \(decodedResponse.url)")
+                                
+                               
+                                print("Image URL: \(addProductVM.imageURL)")
                                 
                                 DispatchQueue.main.async {
                                     self.uploadSucsess = true
@@ -312,6 +374,7 @@ struct AddProductView: View {
                         }
                     }
                 }
+                 //print( httpResponse.statusCode)
                 task.resume()
             }
     
