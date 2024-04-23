@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Fish_BookApp: App {
+    @StateObject var vm = AllProductViewModel()
+    @StateObject var vmF = FavouriteProductsViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
+                .environmentObject(vm)
+                .environmentObject(vmF)
         }
     }
 }

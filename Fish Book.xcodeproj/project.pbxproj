@@ -7,13 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FD9F2B910F990040313D /* ForecastResponse.swift */; };
+		7208FDA22B9112390040313D /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA12B9112390040313D /* APIServices.swift */; };
+		7208FDA42B911F270040313D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA32B911F270040313D /* WeatherView.swift */; };
+		7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7208FDA62B913E800040313D /* SDWebImageSwiftUI */; };
+		724DDCFB2B9C63050088879F /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DDCFA2B9C63050088879F /* WebServices.swift */; };
+		724DDCFE2B9C6FBD0088879F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DDCFD2B9C6FBD0088879F /* LoginViewModel.swift */; };
+		7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91A2B8406BF00DA1AD0 /* LottieView.swift */; };
+		7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */; };
+		725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A52022BD5350700F3E32D /* MyProdectItem.swift */; };
+		726714732BC4C09700333B90 /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714722BC4C09700333B90 /* AllProductsViewModel.swift */; };
+		726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714762BC4CC7B00333B90 /* ProductModel.swift */; };
+		7267147A2BC4D97400333B90 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714792BC4D97400333B90 /* data.swift */; };
 		727D220F2B729BD70079FE9E /* Fish_BookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D220E2B729BD70079FE9E /* Fish_BookApp.swift */; };
-		727D22112B729BD70079FE9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D22102B729BD70079FE9E /* ContentView.swift */; };
+		727D22112B729BD70079FE9E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D22102B729BD70079FE9E /* WelcomeView.swift */; };
 		727D22132B729BDE0079FE9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727D22122B729BDE0079FE9E /* Assets.xcassets */; };
 		727D22162B729BDE0079FE9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727D22152B729BDE0079FE9E /* Preview Assets.xcassets */; };
 		727D22202B729BDE0079FE9E /* Fish_BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D221F2B729BDE0079FE9E /* Fish_BookTests.swift */; };
 		727D222A2B729BDE0079FE9E /* Fish_BookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D22292B729BDE0079FE9E /* Fish_BookUITests.swift */; };
 		727D222C2B729BDE0079FE9E /* Fish_BookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D222B2B729BDE0079FE9E /* Fish_BookUITestsLaunchTests.swift */; };
+		727D22392B729C0B0079FE9E /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D22382B729C0B0079FE9E /* Validations.swift */; };
+		727D223B2B72B2580079FE9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D223A2B72B2580079FE9E /* LoginView.swift */; };
+		727D223D2B72B2BD0079FE9E /* RegestrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D223C2B72B2BD0079FE9E /* RegestrationView.swift */; };
+		7284103D2BC722E9004FB570 /* MainTapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284103C2BC722E9004FB570 /* MainTapp.swift */; };
+		7284103F2BC75993004FB570 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284103E2BC75993004FB570 /* ProductDetailsView.swift */; };
+		7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290071C2BA8A8C100FEA563 /* ShopView.swift */; };
+		7290071F2BA8AA6600FEA563 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290071E2BA8AA6600FEA563 /* SearchTextField.swift */; };
+		729007212BA8AAA900FEA563 /* PasswordText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729007202BA8AAA900FEA563 /* PasswordText.swift */; };
+		729007232BA8AB2200FEA563 /* EmailText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729007222BA8AB2200FEA563 /* EmailText.swift */; };
+		729007252BA8B4C600FEA563 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729007242BA8B4C600FEA563 /* ProductCell.swift */; };
+		729276012B83D69C005BC34B /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729276002B83D69C005BC34B /* GifView.swift */; };
+		729276032B83D6BC005BC34B /* fishing-gif-image.gif in Resources */ = {isa = PBXBuildFile; fileRef = 729276022B83D6BC005BC34B /* fishing-gif-image.gif */; };
+		729276052B83DBF7005BC34B /* lottie-Animation-1 -.json in Resources */ = {isa = PBXBuildFile; fileRef = 729276042B83DBF7005BC34B /* lottie-Animation-1 -.json */; };
+		729276072B83DC00005BC34B /* lottie-Animation-2 -.json in Resources */ = {isa = PBXBuildFile; fileRef = 729276062B83DC00005BC34B /* lottie-Animation-2 -.json */; };
+		729DF9A02BCE139D003D4165 /* FavouriteProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DF99F2BCE139D003D4165 /* FavouriteProductsViewModel.swift */; };
+		729DF9A22BCE14C6003D4165 /* FavouriteProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DF9A12BCE14C6003D4165 /* FavouriteProductItem.swift */; };
+		729DF9A62BCE4737003D4165 /* ProductSFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DF9A52BCE4737003D4165 /* ProductSFavView.swift */; };
+		72A61DDD2BAD9DA7002FEA85 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A61DDC2BAD9DA7002FEA85 /* AddProductViewModel.swift */; };
+		72A61DDF2BADC998002FEA85 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A61DDE2BADC998002FEA85 /* ImagePicker.swift */; };
+		72B9454B2B8538370021D718 /* AllowNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9454A2B8538360021D718 /* AllowNotificationView.swift */; };
+		72CD7F662BC707150076618C /* ProduuctItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7F652BC707150076618C /* ProduuctItemHeaderView.swift */; };
+		72F5F3B52B9F5BFF00269998 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F5F3B42B9F5BFF00269998 /* SignUpViewModel.swift */; };
+		72FCD9FD2BCCF6A500A896FD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */; };
+		72FD90772BA6146600501FBC /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD90762BA6146600501FBC /* AddProductView.swift */; };
+		B276432AB9E2CEC124B32537 /* Pods_Fish_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7DC69BB12E01568D3616AD /* Pods_Fish_Book.framework */; };
+		CED69211A0019DCB728D0901 /* Pods_Fish_BookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B6A7EEFC7D968E985365C /* Pods_Fish_BookTests.framework */; };
+		EAF1BB132C11B184145140F0 /* Pods_Fish_Book_Fish_BookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +73,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02C4EFE5DAA60BE95FEFC36F /* Pods-Fish Book-Fish BookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish Book-Fish BookUITests.release.xcconfig"; path = "Target Support Files/Pods-Fish Book-Fish BookUITests/Pods-Fish Book-Fish BookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		210B6A7EEFC7D968E985365C /* Pods_Fish_BookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_BookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CB37A20DB19F4882D4CDDF /* Pods-Fish Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish Book.debug.xcconfig"; path = "Target Support Files/Pods-Fish Book/Pods-Fish Book.debug.xcconfig"; sourceTree = "<group>"; };
+		40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_Book_Fish_BookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7208FD9F2B910F990040313D /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
+		7208FDA12B9112390040313D /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		7208FDA32B911F270040313D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		724DDCFA2B9C63050088879F /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		724DDCFD2B9C6FBD0088879F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7259F91A2B8406BF00DA1AD0 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		725A52022BD5350700F3E32D /* MyProdectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProdectItem.swift; sourceTree = "<group>"; };
+		726714722BC4C09700333B90 /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
+		726714762BC4CC7B00333B90 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		726714792BC4D97400333B90 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		727D220B2B729BD70079FE9E /* Fish Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fish Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727D220E2B729BD70079FE9E /* Fish_BookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish_BookApp.swift; sourceTree = "<group>"; };
-		727D22102B729BD70079FE9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		727D22102B729BD70079FE9E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		727D22122B729BDE0079FE9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727D22152B729BDE0079FE9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		727D221B2B729BDE0079FE9E /* Fish BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fish BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +98,35 @@
 		727D22252B729BDE0079FE9E /* Fish BookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fish BookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727D22292B729BDE0079FE9E /* Fish_BookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish_BookUITests.swift; sourceTree = "<group>"; };
 		727D222B2B729BDE0079FE9E /* Fish_BookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish_BookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		727D22382B729C0B0079FE9E /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		727D223A2B72B2580079FE9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		727D223C2B72B2BD0079FE9E /* RegestrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegestrationView.swift; sourceTree = "<group>"; };
+		7284103C2BC722E9004FB570 /* MainTapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapp.swift; sourceTree = "<group>"; };
+		7284103E2BC75993004FB570 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		7290071C2BA8A8C100FEA563 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		7290071E2BA8AA6600FEA563 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		729007202BA8AAA900FEA563 /* PasswordText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordText.swift; sourceTree = "<group>"; };
+		729007222BA8AB2200FEA563 /* EmailText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailText.swift; sourceTree = "<group>"; };
+		729007242BA8B4C600FEA563 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		729276002B83D69C005BC34B /* GifView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		729276022B83D6BC005BC34B /* fishing-gif-image.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fishing-gif-image.gif"; sourceTree = "<group>"; };
+		729276042B83DBF7005BC34B /* lottie-Animation-1 -.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-Animation-1 -.json"; sourceTree = "<group>"; };
+		729276062B83DC00005BC34B /* lottie-Animation-2 -.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-Animation-2 -.json"; sourceTree = "<group>"; };
+		729DF99F2BCE139D003D4165 /* FavouriteProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductsViewModel.swift; sourceTree = "<group>"; };
+		729DF9A12BCE14C6003D4165 /* FavouriteProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductItem.swift; sourceTree = "<group>"; };
+		729DF9A52BCE4737003D4165 /* ProductSFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSFavView.swift; sourceTree = "<group>"; };
+		72A61DDC2BAD9DA7002FEA85 /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		72A61DDE2BADC998002FEA85 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		72B9454A2B8538360021D718 /* AllowNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowNotificationView.swift; sourceTree = "<group>"; };
+		72CD7F652BC707150076618C /* ProduuctItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduuctItemHeaderView.swift; sourceTree = "<group>"; };
+		72F5F3B42B9F5BFF00269998 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		72FD90762BA6146600501FBC /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		79AC893579327CC9926EE561 /* Pods-Fish Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish Book.release.xcconfig"; path = "Target Support Files/Pods-Fish Book/Pods-Fish Book.release.xcconfig"; sourceTree = "<group>"; };
+		820E85FC8824F1B3797207BD /* Pods-Fish BookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish BookTests.release.xcconfig"; path = "Target Support Files/Pods-Fish BookTests/Pods-Fish BookTests.release.xcconfig"; sourceTree = "<group>"; };
+		A2D4B9684C52382D0D28BC49 /* Pods-Fish BookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish BookTests.debug.xcconfig"; path = "Target Support Files/Pods-Fish BookTests/Pods-Fish BookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6C3737C26D76F981C2D463E /* Pods-Fish Book-Fish BookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish Book-Fish BookUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fish Book-Fish BookUITests/Pods-Fish Book-Fish BookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC7DC69BB12E01568D3616AD /* Pods_Fish_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */,
+				B276432AB9E2CEC124B32537 /* Pods_Fish_Book.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED69211A0019DCB728D0901 /* Pods_Fish_BookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +151,99 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF1BB132C11B184145140F0 /* Pods_Fish_Book_Fish_BookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CF06E3C86211686D8675905 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34CB37A20DB19F4882D4CDDF /* Pods-Fish Book.debug.xcconfig */,
+				79AC893579327CC9926EE561 /* Pods-Fish Book.release.xcconfig */,
+				E6C3737C26D76F981C2D463E /* Pods-Fish Book-Fish BookUITests.debug.xcconfig */,
+				02C4EFE5DAA60BE95FEFC36F /* Pods-Fish Book-Fish BookUITests.release.xcconfig */,
+				A2D4B9684C52382D0D28BC49 /* Pods-Fish BookTests.debug.xcconfig */,
+				820E85FC8824F1B3797207BD /* Pods-Fish BookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		0F96E231041D035EE3DA6167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC7DC69BB12E01568D3616AD /* Pods_Fish_Book.framework */,
+				40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */,
+				210B6A7EEFC7D968E985365C /* Pods_Fish_BookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7208FD9E2B910F4E0040313D /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				7208FDA12B9112390040313D /* APIServices.swift */,
+				7208FDA32B911F270040313D /* WeatherView.swift */,
+			);
+			name = Weather;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		724DDCF92B9C62D50088879F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				724DDCFA2B9C63050088879F /* WebServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		724DDCFC2B9C6F8E0088879F /*  View Models */ = {
+			isa = PBXGroup;
+			children = (
+				724DDCFD2B9C6FBD0088879F /* LoginViewModel.swift */,
+				72F5F3B42B9F5BFF00269998 /* SignUpViewModel.swift */,
+				72A61DDC2BAD9DA7002FEA85 /* AddProductViewModel.swift */,
+				726714722BC4C09700333B90 /* AllProductsViewModel.swift */,
+				729DF99F2BCE139D003D4165 /* FavouriteProductsViewModel.swift */,
+			);
+			path = " View Models";
+			sourceTree = "<group>";
+		};
+		726714742BC4C13100333B90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				729007242BA8B4C600FEA563 /* ProductCell.swift */,
+				72FD90762BA6146600501FBC /* AddProductView.swift */,
+				7290071C2BA8A8C100FEA563 /* ShopView.swift */,
+				72CD7F652BC707150076618C /* ProduuctItemHeaderView.swift */,
+				7284103E2BC75993004FB570 /* ProductDetailsView.swift */,
+				72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */,
+				729DF9A12BCE14C6003D4165 /* FavouriteProductItem.swift */,
+				729DF9A52BCE4737003D4165 /* ProductSFavView.swift */,
+				725A52022BD5350700F3E32D /* MyProdectItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		726714752BC4C14100333B90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7208FD9F2B910F990040313D /* ForecastResponse.swift */,
+				726714762BC4CC7B00333B90 /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		726714782BC4CCF500333B90 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				726714792BC4D97400333B90 /* data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		727D22022B729BD70079FE9E = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +251,8 @@
 				727D221E2B729BDE0079FE9E /* Fish BookTests */,
 				727D22282B729BDE0079FE9E /* Fish BookUITests */,
 				727D220C2B729BD70079FE9E /* Products */,
+				0CF06E3C86211686D8675905 /* Pods */,
+				0F96E231041D035EE3DA6167 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,8 +270,19 @@
 			isa = PBXGroup;
 			children = (
 				727D220E2B729BD70079FE9E /* Fish_BookApp.swift */,
-				727D22102B729BD70079FE9E /* ContentView.swift */,
+				726714782BC4CCF500333B90 /* Data */,
+				726714752BC4C14100333B90 /* Model */,
+				726714742BC4C13100333B90 /* View */,
+				724DDCFC2B9C6F8E0088879F /*  View Models */,
+				724DDCF92B9C62D50088879F /* Services */,
+				7208FD9E2B910F4E0040313D /* Weather */,
+				72B945502B855E440021D718 /* UICommon */,
+				72B9454C2B8551880021D718 /* Login */,
+				72B9454D2B8552120021D718 /* MainTap */,
+				729276042B83DBF7005BC34B /* lottie-Animation-1 -.json */,
+				729276062B83DC00005BC34B /* lottie-Animation-2 -.json */,
 				727D22122B729BDE0079FE9E /* Assets.xcassets */,
+				729276022B83D6BC005BC34B /* fishing-gif-image.gif */,
 				727D22142B729BDE0079FE9E /* Preview Content */,
 			);
 			path = "Fish Book";
@@ -127,6 +313,40 @@
 			path = "Fish BookUITests";
 			sourceTree = "<group>";
 		};
+		72B9454C2B8551880021D718 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */,
+				727D22102B729BD70079FE9E /* WelcomeView.swift */,
+				727D223C2B72B2BD0079FE9E /* RegestrationView.swift */,
+				72B9454A2B8538360021D718 /* AllowNotificationView.swift */,
+				727D223A2B72B2580079FE9E /* LoginView.swift */,
+				727D22382B729C0B0079FE9E /* Validations.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		72B9454D2B8552120021D718 /* MainTap */ = {
+			isa = PBXGroup;
+			children = (
+				7284103C2BC722E9004FB570 /* MainTapp.swift */,
+			);
+			path = MainTap;
+			sourceTree = "<group>";
+		};
+		72B945502B855E440021D718 /* UICommon */ = {
+			isa = PBXGroup;
+			children = (
+				7259F91A2B8406BF00DA1AD0 /* LottieView.swift */,
+				729276002B83D69C005BC34B /* GifView.swift */,
+				7290071E2BA8AA6600FEA563 /* SearchTextField.swift */,
+				729007202BA8AAA900FEA563 /* PasswordText.swift */,
+				729007222BA8AB2200FEA563 /* EmailText.swift */,
+				72A61DDE2BADC998002FEA85 /* ImagePicker.swift */,
+			);
+			path = UICommon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,15 +354,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 727D222F2B729BDE0079FE9E /* Build configuration list for PBXNativeTarget "Fish Book" */;
 			buildPhases = (
+				19A327FCE84B79DF1ECA0CAD /* [CP] Check Pods Manifest.lock */,
 				727D22072B729BD70079FE9E /* Sources */,
 				727D22082B729BD70079FE9E /* Frameworks */,
 				727D22092B729BD70079FE9E /* Resources */,
+				8C018EBD7393E39A77A365CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Fish Book";
+			packageProductDependencies = (
+				7208FDA62B913E800040313D /* SDWebImageSwiftUI */,
+			);
 			productName = "Fish Book";
 			productReference = 727D220B2B729BD70079FE9E /* Fish Book.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +376,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 727D22322B729BDE0079FE9E /* Build configuration list for PBXNativeTarget "Fish BookTests" */;
 			buildPhases = (
+				37E0D3C3548DD1BAC9DB2492 /* [CP] Check Pods Manifest.lock */,
 				727D22172B729BDE0079FE9E /* Sources */,
 				727D22182B729BDE0079FE9E /* Frameworks */,
 				727D22192B729BDE0079FE9E /* Resources */,
@@ -169,9 +395,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 727D22352B729BDE0079FE9E /* Build configuration list for PBXNativeTarget "Fish BookUITests" */;
 			buildPhases = (
+				0E05D866022E961978C399C4 /* [CP] Check Pods Manifest.lock */,
 				727D22212B729BDE0079FE9E /* Sources */,
 				727D22222B729BDE0079FE9E /* Frameworks */,
 				727D22232B729BDE0079FE9E /* Resources */,
+				D05EA708412CB7D7BC27C62F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +443,9 @@
 				Base,
 			);
 			mainGroup = 727D22022B729BD70079FE9E;
+			packageReferences = (
+				7208FDA52B913E800040313D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 727D220C2B729BD70079FE9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,7 +462,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729276072B83DC00005BC34B /* lottie-Animation-2 -.json in Resources */,
 				727D22162B729BDE0079FE9E /* Preview Assets.xcassets in Resources */,
+				729276052B83DBF7005BC34B /* lottie-Animation-1 -.json in Resources */,
+				729276032B83D6BC005BC34B /* fishing-gif-image.gif in Resources */,
 				727D22132B729BDE0079FE9E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,13 +486,148 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E05D866022E961978C399C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fish Book-Fish BookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19A327FCE84B79DF1ECA0CAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fish Book-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E0D3C3548DD1BAC9DB2492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fish BookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C018EBD7393E39A77A365CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fish Book/Pods-Fish Book-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fish Book/Pods-Fish Book-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fish Book/Pods-Fish Book-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D05EA708412CB7D7BC27C62F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fish Book-Fish BookUITests/Pods-Fish Book-Fish BookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fish Book-Fish BookUITests/Pods-Fish Book-Fish BookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fish Book-Fish BookUITests/Pods-Fish Book-Fish BookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		727D22072B729BD70079FE9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				727D22112B729BD70079FE9E /* ContentView.swift in Sources */,
+				729DF9A02BCE139D003D4165 /* FavouriteProductsViewModel.swift in Sources */,
+				7208FDA22B9112390040313D /* APIServices.swift in Sources */,
+				7290071F2BA8AA6600FEA563 /* SearchTextField.swift in Sources */,
+				72FD90772BA6146600501FBC /* AddProductView.swift in Sources */,
+				72F5F3B52B9F5BFF00269998 /* SignUpViewModel.swift in Sources */,
+				729007212BA8AAA900FEA563 /* PasswordText.swift in Sources */,
+				7284103D2BC722E9004FB570 /* MainTapp.swift in Sources */,
+				727D22112B729BD70079FE9E /* WelcomeView.swift in Sources */,
+				725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */,
+				726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */,
+				729007232BA8AB2200FEA563 /* EmailText.swift in Sources */,
+				729276012B83D69C005BC34B /* GifView.swift in Sources */,
+				726714732BC4C09700333B90 /* AllProductsViewModel.swift in Sources */,
+				724DDCFE2B9C6FBD0088879F /* LoginViewModel.swift in Sources */,
+				7284103F2BC75993004FB570 /* ProductDetailsView.swift in Sources */,
+				72CD7F662BC707150076618C /* ProduuctItemHeaderView.swift in Sources */,
+				727D223D2B72B2BD0079FE9E /* RegestrationView.swift in Sources */,
+				7267147A2BC4D97400333B90 /* data.swift in Sources */,
+				729DF9A62BCE4737003D4165 /* ProductSFavView.swift in Sources */,
+				7208FDA42B911F270040313D /* WeatherView.swift in Sources */,
+				729007252BA8B4C600FEA563 /* ProductCell.swift in Sources */,
+				72A61DDD2BAD9DA7002FEA85 /* AddProductViewModel.swift in Sources */,
+				7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */,
+				72A61DDF2BADC998002FEA85 /* ImagePicker.swift in Sources */,
+				727D22392B729C0B0079FE9E /* Validations.swift in Sources */,
+				72FCD9FD2BCCF6A500A896FD /* ProfileView.swift in Sources */,
+				7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */,
+				7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */,
+				729DF9A22BCE14C6003D4165 /* FavouriteProductItem.swift in Sources */,
+				727D223B2B72B2580079FE9E /* LoginView.swift in Sources */,
 				727D220F2B729BD70079FE9E /* Fish_BookApp.swift in Sources */,
+				724DDCFB2B9C63050088879F /* WebServices.swift in Sources */,
+				7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */,
+				72B9454B2B8538370021D718 /* AllowNotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +780,7 @@
 		};
 		727D22302B729BDE0079FE9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34CB37A20DB19F4882D4CDDF /* Pods-Fish Book.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -439,6 +809,7 @@
 		};
 		727D22312B729BDE0079FE9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79AC893579327CC9926EE561 /* Pods-Fish Book.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,6 +838,7 @@
 		};
 		727D22332B729BDE0079FE9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D4B9684C52382D0D28BC49 /* Pods-Fish BookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +858,7 @@
 		};
 		727D22342B729BDE0079FE9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 820E85FC8824F1B3797207BD /* Pods-Fish BookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +878,7 @@
 		};
 		727D22362B729BDE0079FE9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C3737C26D76F981C2D463E /* Pods-Fish Book-Fish BookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +896,7 @@
 		};
 		727D22372B729BDE0079FE9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C4EFE5DAA60BE95FEFC36F /* Pods-Fish Book-Fish BookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,6 +952,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7208FDA52B913E800040313D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7208FDA62B913E800040313D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7208FDA52B913E800040313D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 727D22032B729BD70079FE9E /* Project object */;
 }
