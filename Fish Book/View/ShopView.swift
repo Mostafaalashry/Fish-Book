@@ -48,8 +48,9 @@ struct ShopView: View {
                     
                     Spacer()
                     ScrollView(showsIndicators: false) {
-                        headerView
-                        
+                        if vm.allProducts.count != 0{
+                            headerView
+                        }
                         fishingGear
                         
                         baitfishing
@@ -93,27 +94,63 @@ struct ShopView_Previews: PreviewProvider {
              .padding()
  
  
+ 
+ 
+ 
+ 
+ 
+ extension ShopView {
+     var headerView: some View {
+         
+             TabView(selection: $indexer) {
+                 ForEach(0..<vm.allProducts.count) { index in
+                     ProduuctItemHeaderView(product: vm.allProducts[index])
+                         .tag(index)
+                 }
+             }
+             .tabViewStyle(PageTabViewStyle())
+             .frame(height: UIScreen.main.bounds.height/2.7 , alignment: .center)
+             .onReceive(timer) { timerCount in
+                 withAnimation(.easeInOut(duration: 1.0)) {
+                     indexer = indexer == 4 ? 0 : indexer + 1
+                 }
+             }
+         
+     }
+ }
  */
+
+
 extension ShopView {
     var headerView: some View {
-        
+       
             TabView(selection: $indexer) {
-                ForEach(0..<vm.allProducts.count) { index in
-                    ProduuctItemHeaderView(product: vm.allProducts[index])
-                        .tag(index)
-                }
+                  ForEach(0..<vm.allProducts.count ) { index in
+                ProduuctItemHeaderView(product: vm.allProducts[indexer])
+                    .tag(index)
+               
+                
+                
+                  }
             }
             .tabViewStyle(PageTabViewStyle())
             .frame(height: UIScreen.main.bounds.height/2.7 , alignment: .center)
-            .onReceive(timer) { timerCount in
+            .onReceive(timer) { _ in
                 withAnimation(.easeInOut(duration: 1.0)) {
-                    indexer = indexer == 4 ? 0 : indexer + 1
+                    indexer = indexer==vm.allProducts.count-1 ? 0 : indexer+1
+                    
+                    
                 }
             }
-        
-    }
+        }
+       
+    
 }
+
+
 /*
+ 
+ 
 extension ShopView{
     var headerView :some View{
         if vm.allProducts.count >= 5{
