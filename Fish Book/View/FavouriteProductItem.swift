@@ -10,10 +10,10 @@ import SwiftUI
 struct FavouriteProductItem: View {
    
         @EnvironmentObject var vm :FavouriteProductsViewModel
-        let produuct  : ProductModel
+        let produuct  : ProductFavouriteModel
         var body: some View {
             HStack(spacing: 0){
-                Image(produuct.imageUrl)
+                Image(produuct.imageUrl ?? "")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150 ,height: 150 ,alignment: .center)

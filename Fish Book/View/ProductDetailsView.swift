@@ -23,7 +23,7 @@ struct ProductDetailsView: View {
     
     var body: some View {
         VStack{
-            Image(product.imageUrl)
+            Image(product.imageUrl ?? "")
                 .resizable()
                 .scaledToFill()
                 .frame(height: UIScreen.main.bounds.height/3.5,alignment: .center)
@@ -81,9 +81,12 @@ struct ProductDetailsView: View {
                         .padding(.top,20)
                         .foregroundColor(Color.black)
                     Button {
-                        var urlString  = isFavourite ? "http://localhost:8080/api/products/like\(product.id) " : "http://localhost:8080/api/products/dislike\(product.id)"
+                        let urlString  = isFavourite ? "http://localhost:8080/api/products/dislike/\(product.id)" : "http://localhost:8080/api/products/like/\(product.id)"
                         
-                        WebServices().sendID(httpMethod:"PUT",urlString: urlString, token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+                        let token  = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
+                        print("token"+token)
+                        print("token"+urlString)
+                        WebServices().sendID(httpMethod:"PUT",urlString: urlString, token: token) { (result: Result<Int, Error>) in
                             switch result {
                             case .success(let success):
                                 isFavourite.toggle()
@@ -92,7 +95,6 @@ struct ProductDetailsView: View {
                                 print(error.localizedDescription)
                             }
                         }
-                        
                         
                        
                     } label: {

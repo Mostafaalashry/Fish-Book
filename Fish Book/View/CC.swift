@@ -14,21 +14,24 @@ struct CC: View {
     @State private var imageURL: String?
     @State private var showAlert = false
     @State private var isShowingImagePicker = false
-/*
+    let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
+
+
     func uploadImage(image: UIImage) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             print("Failed to convert image to JPEG data")
             return
         }
 
-        guard let url = URL(string: "https://localhost:8080/api/image/uploadUserImage") else {
+        guard let url = URL(string: "http://localhost:8080/api/image/uploadUserImage") else {
             print("Invalid URL for image upload")
             return
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
         let boundary = UUID().uuidString
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
@@ -77,7 +80,7 @@ struct CC: View {
         
         task.resume()
     }
-*/
+
     var body: some View {
         VStack {
             if let image = selectedImage {
@@ -98,11 +101,7 @@ struct CC: View {
             .padding()
 
             Button("Upload Image") {
-                WebServices().uploadImage(image: selectedImage!) { valid in
-                    print(valid)
-                } urlStringHandler: { url in
-                    print(url)
-                }
+                uploadImage(image: selectedImage! )
 
             }
             .padding()
@@ -140,3 +139,4 @@ struct CC_Previews: PreviewProvider {
         CC()
     }
 }
+

@@ -15,9 +15,13 @@ class AllProductViewModel : ObservableObject{
     @Published  var allProducts :[ProductModel] = []
     
     func fetchProducts(){
+        print("hi switch")
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
-        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/allProductsWithFlagLikedOnes", token: token) { (result: Result<[ProductModel], Error>) in
+        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/allProductsWithFlagLikedOnes", token: token) {
+            
+            (result: Result<[ProductModel], Error>) in
             switch result {
+               
                 case .success(let data):
                 self.allProducts = data
                    print("all Products sucesses")

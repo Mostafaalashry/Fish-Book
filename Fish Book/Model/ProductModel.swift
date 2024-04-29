@@ -12,15 +12,27 @@ struct ProductModel:Codable {
     let id : Int64
     let title:String
     let content :String
-    let price :Int
-    let imageUrl:String
+    let price :Int32
+    let imageUrl :String?
     let liked :Bool
-    let categoryId:Int64
+    let categoryId :Int64
     let publisherName :String
-    let publisherImage :String
+    let publisherImage :String?
     let publisherId :Int64
     let createdOn :String
-    let updatedOn :String
+    let updatedOn :String?
+}
+struct ProductFavouriteModel:Codable {
+    let id : Int64
+    let title:String
+    let content :String
+    let price :Int32
+    let imageUrl :String?
+    let publisherName :String
+    let publisherImage :String?
+    let publisherId :Int64
+    let createdOn :String
+    let updatedOn :String?
 }
 
 struct Allproducts :Codable {
@@ -48,9 +60,8 @@ struct MyProductModel:Codable {
     let id : Int64
     let title:String
     let content :String
-    let price :Int
+    let price :Int32
     let imageUrl:String
-    let isLiked :Bool
     let categoryId:Int64
     let createdOn :String
     let updatedOn :String

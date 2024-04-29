@@ -15,12 +15,12 @@ import SwiftUI
 class FavouriteProductsViewModel : ObservableObject{
     
     
-    @Published  var favouriteProductss :[ProductModel] = []
+    @Published  var favouriteProductss :[ProductFavouriteModel] = []
    // @Published  var favouriteProductss  = dataa.allProducts
     
     func fetchProducts(){
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
-        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/likedProducts", token: token) { (result: Result<[ProductModel], Error>) in
+        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/likedProducts", token: token) { (result: Result<[ProductFavouriteModel], Error>) in
             switch result {
                 case .success(let data):
                 self.favouriteProductss = data
@@ -31,11 +31,11 @@ class FavouriteProductsViewModel : ObservableObject{
         }
     }
     
-    func deleteFromFavourite(product:ProductModel){
+    func deleteFromFavourite(product:ProductFavouriteModel){
         var index  = 0
             for producttt in favouriteProductss {
                 if producttt.id == product.id {
-                    WebServices().sendID(httpMethod:"PUT",urlString: "http://localhost:8080/api/products/dislike\(product.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+                    WebServices().sendID(httpMethod:"PUT",urlString: "http://localhost:8080/api/products/dislike/\(product.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
                         switch result {
                         case .success(let success):
                           

@@ -99,6 +99,77 @@ class WebServices {
         
     }
     
+    func uploadImage(image: UIImage ,url :String  ,completion: @escaping (Result<String, AuthenticationError>) -> Void)  {
+        guard let imageData = image.jpegData(compressionQuality: 0.6) else {
+          //  print("Failed to convert image to JPEG data")
+            completion(.failure(.custom(errorMessage: "Failed to convert image to JPEG dataL")))
+            return
+        }
+
+        guard let url = URL(string: url) else {
+           // print("Invalid URL for image upload")
+            completion(.failure(.custom(errorMessage: "Invalid URL")))
+            return
+        }
+        let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var body = Data()
+        
+        // Append image data
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+        body.append(imageData)
+        body.append("\r\n".data(using: .utf8)!)
+        
+        // Append end boundary
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        request.httpBody = body
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Invalid response")
+                return
+            }
+            
+            guard (200..<300).contains(httpResponse.statusCode) else {
+                print("HTTP Error: \(httpResponse.statusCode)")
+                return
+            }
+            
+            if let responseData = data {
+                do {
+                    let decodedResponse = try JSONDecoder().decode(ResponseData.self, from: responseData)
+                  //  print("Image URL: \(decodedResponse.url)")
+                    completion(.success(decodedResponse.url))
+                     
+                    // Handle success
+                } catch {
+                    print("Error decoding response: \(error)")
+                }
+            } else {
+                print("No response data")
+            }
+        }
+        
+        task.resume()
+        
+        
+    }
+    
     func uplloadDta<T: Codable>(input: T,
                             token: String,
                             url: String,
@@ -125,7 +196,7 @@ class WebServices {
             completion(.success(statusCode))
         }.resume()
     }
-
+/*
     func uploadImage(image: UIImage, uploadSuccess: @escaping (Bool) -> Void, urlStringHandler: @escaping (String?) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             return
@@ -184,6 +255,8 @@ class WebServices {
         }
         task.resume()
     }
+    
+    */
     
     /*
     func uploadImagee(image: UIImage ,imageURLL:String ,uploadSucsess:Bool ) {
@@ -272,6 +345,7 @@ class WebServices {
                 }
             } catch {
                 DispatchQueue.main.async {
+                    print ("can not decode ")
                     completion(.failure(error))
                 }
             }
@@ -280,15 +354,19 @@ class WebServices {
     
     func sendID(httpMethod : String,urlString: String,  token: String , completion: @escaping (Result<Int, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
+            print("urrl"+urlString)
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "\(httpMethod)"
-        request.addValue("text/plain", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "PUT"
+       // request.addValue("text/plain", forHTTPHeaderField: "Content-Type")
+       
+       // request.addValue(" application/json", forHTTPHeaderField: "Content-Type")
+
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
+        print("second "+token)
        
        
         

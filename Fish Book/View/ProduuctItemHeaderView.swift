@@ -28,7 +28,7 @@ struct ProduuctItemHeaderView: View {
 
             }
             
-            Image(product.imageUrl)
+            Image(product.imageUrl ?? "")
                 .resizable()
                 .frame(width: 150 , height: 150 ,alignment: .center)
                 .scaledToFit()

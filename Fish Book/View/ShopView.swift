@@ -243,7 +243,8 @@ extension ShopView{
               
             
              NavigationLink {
-                 ProductSFavView()
+              ProductSFavView()
+                 
                  
              } label: {
                  Image(systemName: "heart.fill")
@@ -282,17 +283,13 @@ extension ShopView{
               }
               .disabled(!IsFilterApplied)
               .popover(isPresented: $showingPopover) {
-                  AddProductView()
+                  if showingPopover{
+                      AddProductView(showingPopover: $showingPopover)
+                  }
+                  
                   
               }
-              
-           
-
             
-                 
-             
-             
-             
         
           Image(systemName: "line.3.horizontal.decrease" )
              .resizable()

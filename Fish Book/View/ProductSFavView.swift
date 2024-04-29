@@ -14,7 +14,7 @@ struct ProductSFavView: View {
             ScrollView(showsIndicators: false  ){
                 ForEach(vm.favouriteProductss ,  id: \.id) { product in
                     NavigationLink {
-                        ProductDetailsView(product: product, isfavourite: product.liked)
+                    //    ProductDetailsView(product: product, isfavourite: product.liked)
                     } label: {
                         FavouriteProductItem(produuct: product)
                             .padding(.vertical,20)
@@ -23,6 +23,7 @@ struct ProductSFavView: View {
                     
                    
                 }
+                
                 Spacer()
             }.frame(width: UIScreen.main.bounds.width)
                 .navigationTitle("My Favourite Products")

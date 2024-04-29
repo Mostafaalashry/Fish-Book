@@ -50,6 +50,17 @@ struct ProfileView: View {
                         .font(.caption)
                         .padding(.horizontal)
                     Spacer()
+                    NavigationLink {
+                        UpdateUserInfoView()
+                    } label: {
+                        Image(systemName: "pencil.line")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20 ,height: 20)
+                            .padding(.trailing)
+                    }
+
+                   
                 }
                 
                 Picker(selection: $selection, label: Text("")) {
@@ -62,7 +73,9 @@ struct ProfileView: View {
                 Spacer()
                 
                 if selection == 0 {
+                    
                     MyProductsView()
+                    
                 } else if selection == 1 {
                     View2()
                 } else {

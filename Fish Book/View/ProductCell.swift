@@ -20,7 +20,7 @@ struct ProductCell: View {
         VStack {
             VStack {
                 VStack{
-                    Image(productt.imageUrl)
+                    Image(productt.imageUrl ?? "")
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(12)

@@ -7,19 +7,20 @@ import SwiftUI
 
 
 
-
-
 struct AddProductView: View {
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
     @State private var uploadSucsess = false
     @State private var text: String = ""
     @State private var type: Int = 1
-
+    @State private var showAlert: Bool = false
     @State private var descrription: String = ""
     @State private var name: String = ""
     @State private var price: String = ""
     @State private var imageURL: String = ""
+    @Binding var showingPopover:Bool
+    
+    @State private var alertMessege: String = "ok"
     @StateObject private var addProductVM = AddProduuctViewModel()
 
 
@@ -49,13 +50,24 @@ struct AddProductView: View {
                             .frame(width: 130 , height: 130 , alignment: .leading)
                         //.foregroundColor(Color("SecondaryBlue"))
                             .padding(.leading,10)
+                            
+                            .onAppear{
+                                self.uploadImage {
+                                    print(addProductVM.imageURL+"mmmmmmmmm")
+                                }
+                                }
+                            
                            
                         
                         Spacer()
                         
                     }
                     .padding(.leading,30)
-                } else {
+                        
+                    
+                }
+                
+                else {
                     // Text("No image selected")
                     HStack{
                         
@@ -73,6 +85,7 @@ struct AddProductView: View {
                                 Text("Select Image")
                                     .foregroundColor(Color("Primary Blue"))                }
                             .padding(.bottom)
+                            
                             .sheet(isPresented: $isShowingImagePicker) {
                                 ImagePicker(selectedImage: self.$selectedImage)
                             }
@@ -85,11 +98,11 @@ struct AddProductView: View {
                 
                 
                
-                
+                /*
                 Button(action: {
                     // Call API to upload image here
                     if let image = self.selectedImage {
-                        uploadImage(image: image) 
+                      //  uploadImage(completion: image)
                     }else{
                         print("uploadImage doesnot pegin")
                     }
@@ -104,7 +117,7 @@ struct AddProductView: View {
                         .foregroundColor(.green)
                 }
                 
-                
+                */
             }
             .frame(maxWidth: .infinity)
             
@@ -193,6 +206,7 @@ struct AddProductView: View {
                             .keyboardType(.decimalPad)
                             .frame(minWidth: 0 ,maxWidth: .infinity)
                             .padding(15)
+                            .foregroundColor(Color("Primary Blue"))
                         Rectangle()
                             .frame(height: 1)
                             .foregroundColor(Color("Primary Blue"))
@@ -233,6 +247,7 @@ struct AddProductView: View {
                             .disableAutocorrection(true)
                             .frame(minWidth: 0 ,maxWidth: .infinity)
                             .padding(15)
+                            .foregroundColor(Color("Primary Blue"))
                         
                         Rectangle()
                             .frame(height: 1)
@@ -247,9 +262,16 @@ struct AddProductView: View {
                 
                 
                 Button {
-                   
-                     
-                    sendProduct()
+                    if addProductVM.imageURL == ""{
+                        uploadImage {
+                               // This closure will be executed once the first function is completed
+                               self.publish()
+                           }
+                    }
+                    else{
+                        self.publish()
+                    }
+                    //sendProduct()
                    
                 } label: {
                     Text("publish")
@@ -269,9 +291,20 @@ struct AddProductView: View {
                     .opacity( canProssesd() ? 1 : 0.5)
                     .disabled(!(canProssesd() ))
                     .padding(.vertical,30)
+                    .padding(.bottom , 25)
                 
             }.padding(.horizontal)
             
+        }
+        .alert(alertMessege, isPresented: $showAlert) {
+            Button("ok",role: .cancel) {
+                if alertMessege == "the prroduct added Successfully" {
+                    showingPopover = false
+                }
+                
+            }
+        }message: {
+            Text("")
         }
         
     }
@@ -287,40 +320,59 @@ struct AddProductView: View {
           }
             
    
-     func sendProduct() {
-            // Call the first function with a completion handler
-         uploadImage {
-                // This closure will be executed once the first function is completed
-                self.publish()
-            }
-        }
+    
 
     func uploadImage(completion: @escaping () -> Void) {
         // Simulate a long-running task
        
-        DispatchQueue.global().async {
+       // DispatchQueue.main.async  {
             if let image = self.selectedImage {
-                uploadImage(image: image)
+                //"http://localhost:8080/api/image/uploadProductImage"
+                WebServices().uploadImage(image: image, url: "http://localhost:8080/api/image/uploadProductImage") { result in
+                    switch result {
+                    case .success(let imageurl):
+                        addProductVM.imageURL = imageurl
+                    case .failure(let erorr):
+                        print(erorr.localizedDescription)
+                    }
+                }
                
                 
                 // Call the completion handler once the first function is completed
-                DispatchQueue.main.async {
+                
                     completion()
-                }
+                
             }
-        }
+      //  }
     }
+    
          func publish() {
-             addProductVM.name=name
-             addProductVM.description=descrription
-             addProductVM.price = Double(price) ?? 0.0
-             addProductVM.category = type
-             print(" \(addProductVM.imageURL)...imageURL")
-             addProductVM.addProduct()
+            
+             if addProductVM.imageURL != "" {
+                 addProductVM.name=name
+                 addProductVM.description=descrription
+                 addProductVM.price = Double(price) ?? 0.0
+                 addProductVM.category = type
+                 print(" \(addProductVM.imageURL)...imageURL")
+                 print(" \(addProductVM.description)...")
+                 print(" \(addProductVM.name)...")
+                 print(" \(addProductVM.price)...")
+                 addProductVM.addProduct()
+                 showAlert = true
+                 alertMessege = "the prroduct added Successfully"
+             }
+             else
+             {
+                
+                 alertMessege = "error connection please check the internet"
+                 showAlert = true
+             }
+            
+             
              
         }
     
-
+/*
     func uploadImage(image: UIImage  ) {
                 guard let image = image.jpegData(compressionQuality: 0.8) else {
                     print("cant compress image")
@@ -377,15 +429,16 @@ struct AddProductView: View {
                  //print( httpResponse.statusCode)
                 task.resume()
             }
+    */
     
 }
-
+/*
 struct AddProductView_Previews: PreviewProvider {
     static var previews: some View {
         AddProductView()
     }
 }
-
+*/
 
 
 
