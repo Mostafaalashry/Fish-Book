@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SDWebImageSwiftUI
 struct ProductDetailsView: View {
    // var product  = dataa.allProducts.first
     @State private var isAnimated = false
@@ -14,16 +14,25 @@ struct ProductDetailsView: View {
    
     @State var product:ProductModel
     @State  var isFavourite:Bool
-    
+    /*
     init(isAnimated: Bool = false, product: ProductModel, isfavourite: Bool) {
         self.isAnimated = isAnimated
         self.product = product
         self._isFavourite = State(initialValue: product.liked)
     }
-    
+    */
+    init(isAnimated: Bool = false, product: ProductModel, isFavourite: Bool) {
+        self._isAnimated = State(initialValue: isAnimated)
+       
+        self.product = product
+        self._isFavourite = State(initialValue: isFavourite)
+    }
     var body: some View {
         VStack{
-            Image(product.imageUrl ?? "")
+           // Image(product.imageUrl ?? "")
+           // WebImage(url: URL(string: product.imageUrl ?? ""))
+            WebImage(url: URL(string: product.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+
                 .resizable()
                 .scaledToFill()
                 .frame(height: UIScreen.main.bounds.height/3.5,alignment: .center)
@@ -37,7 +46,7 @@ struct ProductDetailsView: View {
             ScrollView(showsIndicators: false){
               
                     Text(product.title)
-                        .font(.system(size: 35, weight: .semibold , design: .serif))
+                        .font(.system(size: 20, weight: .semibold , design: .serif))
                         .frame(maxWidth: .infinity , alignment:  .leading)
                         .padding(.leading ,20)
                         .padding(.top ,20)
@@ -62,20 +71,20 @@ struct ProductDetailsView: View {
                 
                 HStack{
                     Text("Description")
-                        .font(.system(size: 30 ,weight: .bold,design: .serif))
+                        .font(.system(size: 25 ,weight: .bold,design: .serif))
                         .padding(21)
                     Spacer()
                     
                 }
                 Text(product.content)
-                    .font(.system(size: 18,weight: .medium,design: .serif))
+                    .font(.system(size: 15,weight: .medium,design: .serif))
                     .padding(.leading,19)
                     .padding(.bottom)
                 
                 Spacer()
                 HStack{
                     Text("$"+String(product.price))
-                        .font(.system(size: 25, weight: .bold , design: .monospaced))
+                        .font(.system(size: 15, weight: .bold , design: .monospaced))
                         .frame(maxWidth: .infinity , alignment:  .leading)
                         .padding(.leading ,20)
                         .padding(.top,20)
@@ -100,7 +109,7 @@ struct ProductDetailsView: View {
                     } label: {
                         Text(isFavourite ?  "remove from favourite" : "Add to favourite" )
                             .foregroundColor(Color.white)
-                            .font(.system(size: 20,weight: .bold,design: .serif))
+                            .font(.system(size: 18,weight: .bold,design: .serif))
                             .frame(width: UIScreen.main.bounds.width/1.6, height: 50, alignment: .center)
                             .background(Color("Primary Blue"))
                             .cornerRadius(15)
@@ -127,6 +136,7 @@ struct ProductDetailsView: View {
             
         }
         .edgesIgnoringSafeArea(.bottom )
+        
         
     }
 }

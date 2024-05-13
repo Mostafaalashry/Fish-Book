@@ -17,8 +17,8 @@ enum FocuseedField{
 struct LoginView: View {
     @State private var preseentNextView=false
     @State private var nextview:viewStack = .maintTab
-    @State private var emailTextt = ""
-    @State private var passworrdText = ""
+    @State private var emailTextt = UserDefaults.standard.string(forKey: "email") ?? ""
+    @State private var passworrdText = UserDefaults.standard.string(forKey: "password") ?? ""
     @State private var errorrpassworrdText = ""
     
     @State private var showalert = false
@@ -149,8 +149,11 @@ struct LoginView: View {
                 case .createNewAccount:
                     RegestrationView()
                 case .maintTab:
-                    MainTapp()
+                 //   MainTapp()
+                 //       .navigationBarBackButtonHidden(true)
+                    MainTabCustom()
                         .navigationBarBackButtonHidden(true)
+                       // .ignoresSafeArea(.all)
                 }
                     
                 // ("nextview ")

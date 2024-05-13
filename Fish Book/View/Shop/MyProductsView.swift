@@ -13,6 +13,7 @@ struct MyProductsView: View {
     var body: some View {
         
         ScrollView(showsIndicators: false  ){
+            Spacer().frame(height: 30)
             ForEach(vm.myProducts , id: \.id) { product in
                 
                 
@@ -29,6 +30,9 @@ struct MyProductsView: View {
         .onAppear(
             perform: vm.fetchProducts
         )
+        .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea(.all)
+            .padding(.top ,30)
         
     }
     /*

@@ -75,6 +75,9 @@ struct ProfileView: View {
                 if selection == 0 {
                     
                     MyProductsView()
+                        .edgesIgnoringSafeArea(.all)
+                            .ignoresSafeArea(.all)
+                        //    .padding(.top,30)
                     
                 } else if selection == 1 {
                     View2()
@@ -84,8 +87,15 @@ struct ProfileView: View {
                 
                 Spacer()
             }
-            .padding()
+          //  .padding(.top)
+            .padding(.horizontal)
+            .edgesIgnoringSafeArea(.bottom)
+               
+           // .padding()
+           // .edgesIgnoringSafeArea(.all)
+            //    .ignoresSafeArea(.all)
         }
+        
     }
 
 

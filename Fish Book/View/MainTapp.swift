@@ -22,12 +22,8 @@ struct MainTapp: View {
             VStack(spacing: 0){
                 TabView(selection: $selected){
                     
-                    Color.orange
-                        .overlay(content: {
-                            Text("DevTechie.com")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        })
+                    AllFishesView()
+
                         .tag(tabItems[0])
                         .ignoresSafeArea(.all)
                     
@@ -43,14 +39,9 @@ struct MainTapp: View {
                         .tag(tabItems[3])
                        // .ignoresSafeArea(.all)
                     
-                    Color.pink
-                        .overlay(content: {
-                            Text(".com")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        })
+                    AllFishesView()
                         .tag(tabItems[4])
-                        .ignoresSafeArea(.all)
+                        //.ignoresSafeArea(.all)
                 }
                 Spacer(minLength: 0)
                 CustomTabbarView(tabItems: tabItems, selected: $selected)
@@ -155,7 +146,7 @@ struct BarButton : View {
                 
                 Text(value.description)
                     .font(.caption)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Primary Blue"))
                     .opacity(selected == value ? 1 : 0)
             }
             .padding(.top)
@@ -207,3 +198,4 @@ struct CustomTabbarView: View {
         .ignoresSafeArea(.all, edges: .horizontal)
     }
 }
+

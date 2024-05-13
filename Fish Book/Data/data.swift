@@ -8,7 +8,55 @@
 import Foundation
 
 struct dataa{
-    
+    static let allFishes : [FishModel] = [
+        FishModel(id: 1, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+        ,
+        FishModel(id: 2, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+        ,
+        FishModel(id: 3, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+        ,
+        FishModel(id: 4, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+        ,
+        FishModel(id: 5, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+        ,
+        FishModel(id: 6, name: "snnsnmsm", imageUrl: "firstScreen", fishDetails: [
+            FishDeetails(header: "title 1", content: "StringStringStringStringStringStringStringString")
+               , FishDeetails(header: "title 2", content: "StringStringStringStringStringStringStringString")
+               ,FishDeetails(header: "title 3", content: "StringStringStringStringStringStringStringString")
+                ,FishDeetails(header: "title 4", content: "StringStringStringStringStringStringStringString")
+                  ,FishDeetails(header: "title 5", content: "StringStringStringStringStringStringStringString")
+                                                                                 ])
+    ]
     static let allProducts: [ProductModel] =  [
          ProductModel(id: 1,
                          title: "Fishing Rod",

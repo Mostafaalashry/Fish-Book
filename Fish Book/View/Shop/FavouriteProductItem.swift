@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct FavouriteProductItem: View {
    
@@ -13,18 +14,26 @@ struct FavouriteProductItem: View {
         let produuct  : ProductFavouriteModel
         var body: some View {
             HStack(spacing: 0){
-                Image(produuct.imageUrl ?? "")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150 ,height: 150 ,alignment: .center)
+               // Image(produuct.imageUrl ?? "")
+                VStack{
+                    WebImage(url: URL(string: produuct.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+                    
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(12)
+                        .frame(width: 150 ,height: 150 ,alignment: .center)
+                }
+                .frame(width: 150 , height: 150 , alignment: .leading)
+                    .background(Color.white.cornerRadius(12).shadow(color: Color("Primary Blue").opacity(0.2), radius: 3))
+                    .padding(.trailing)
                 VStack{
                     Text(produuct.title)
-                        .font(.system(size: 30 ,weight: .semibold ,design: .serif))
+                        .font(.system(size: 20 ,weight: .semibold ,design: .serif))
                         .padding(.bottom,5)
                     
                     HStack{
                         Text("$ "+String(produuct.price))
-                            .font(.system(size:25 ,weight: .bold ,design: .serif))
+                            .font(.system(size:17 ,weight: .bold ,design: .serif))
                             .foregroundColor(Color.blue)
                         
                         Button {
@@ -33,7 +42,7 @@ struct FavouriteProductItem: View {
                             
                         } label: {
                            Image(systemName: "trash.circle.fill")
-                                .font(.system(size: 30 ,weight: .semibold ,design: .serif))
+                                .font(.system(size: 27 ,weight: .semibold ,design: .serif))
                                 .foregroundColor(Color.black)
                         }
                         .padding(.leading)

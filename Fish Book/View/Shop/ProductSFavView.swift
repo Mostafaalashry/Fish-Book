@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductSFavView: View {
     @EnvironmentObject var vm : FavouriteProductsViewModel
+   
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false  ){
@@ -33,7 +34,9 @@ struct ProductSFavView: View {
         }
         .onAppear(
             perform: vm.fetchProducts
+           // self.selected = .shop
         )
+        
     }
 }
 /*

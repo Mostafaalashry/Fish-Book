@@ -296,6 +296,7 @@ struct AddProductView: View {
             }.padding(.horizontal)
             
         }
+       
         .alert(alertMessege, isPresented: $showAlert) {
             Button("ok",role: .cancel) {
                 if alertMessege == "the prroduct added Successfully" {

@@ -23,6 +23,8 @@ class  SignUpViewModel:ObservableObject{
             case .success(let token ):
                 print(token)
                 defaults.setValue(token, forKey: "jsonwebtoken")
+                defaults.setValue(self.email, forKey: "email")
+                defaults.setValue(self.password, forKey: "password")
                 DispatchQueue.main.async {
                     self.isAuthenticated = true
                 }

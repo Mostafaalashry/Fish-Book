@@ -100,7 +100,7 @@ class WebServices {
     }
     
     func uploadImage(image: UIImage ,url :String  ,completion: @escaping (Result<String, AuthenticationError>) -> Void)  {
-        guard let imageData = image.jpegData(compressionQuality: 0.6) else {
+        guard let imageData = image.jpegData(compressionQuality: 0.95) else {
           //  print("Failed to convert image to JPEG data")
             completion(.failure(.custom(errorMessage: "Failed to convert image to JPEG dataL")))
             return
@@ -354,13 +354,13 @@ class WebServices {
     
     func sendID(httpMethod : String,urlString: String,  token: String , completion: @escaping (Result<Int, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
-            print("urrl"+urlString)
+           
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
+        request.httpMethod = httpMethod
        // request.addValue("text/plain", forHTTPHeaderField: "Content-Type")
        
        // request.addValue(" application/json", forHTTPHeaderField: "Content-Type")

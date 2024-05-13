@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ShopView: View {
+   
     @State var indexer:Int = 0
 
     @State var timer  = Timer.TimerPublisher(interval: 2, runLoop: .main, mode: .common).autoconnect()
@@ -54,6 +55,7 @@ struct ShopView: View {
                         fishingGear
                         
                         baitfishing
+                        Spacer()
                     }
                     .overlay(
                        
@@ -76,13 +78,13 @@ struct ShopView: View {
         )
     }
 }
-
+/*
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView()
+        ShopView(selected:  )
     }
 }
-
+*/
 /*
  let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
  
@@ -118,35 +120,55 @@ struct ShopView_Previews: PreviewProvider {
          
      }
  }
+ 
+ 
+ 
+ extension ShopView {
+     var headerView: some View {
+        
+             TabView(selection: $indexer) {
+                   ForEach(0..<vm.allProducts.count ) { index in
+                 ProduuctItemHeaderView(product: vm.allProducts[indexer])
+                     .tag(index)
+                
+                 
+                 
+                   }
+             }
+             .tabViewStyle(PageTabViewStyle())
+             .frame(height: UIScreen.main.bounds.height/2.7 , alignment: .center)
+             .onReceive(timer) { _ in
+                 withAnimation(.easeInOut(duration: 1.0)) {
+                     indexer = indexer==vm.allProducts.count-1 ? 0 : indexer+1
+                     
+                     
+                 }
+             }
+         }
+        
+     
+ }
  */
+
 
 
 extension ShopView {
     var headerView: some View {
-       
-            TabView(selection: $indexer) {
-                  ForEach(0..<vm.allProducts.count ) { index in
+        TabView(selection: $indexer) {
+            ForEach(0..<vm.allProducts.count) { index in
                 ProduuctItemHeaderView(product: vm.allProducts[indexer])
                     .tag(index)
-               
-                
-                
-                  }
-            }
-            .tabViewStyle(PageTabViewStyle())
-            .frame(height: UIScreen.main.bounds.height/2.7 , alignment: .center)
-            .onReceive(timer) { _ in
-                withAnimation(.easeInOut(duration: 1.0)) {
-                    indexer = indexer==vm.allProducts.count-1 ? 0 : indexer+1
-                    
-                    
-                }
             }
         }
-       
-    
+        .tabViewStyle(PageTabViewStyle())
+        .frame(height: UIScreen.main.bounds.height/2.7, alignment: .center)
+        .onReceive(timer) { _ in
+            withAnimation(.easeInOut(duration: 1.0)) {
+                indexer = indexer == vm.allProducts.count - 1 ? 0 : indexer + 1
+            }
+        }
+    }
 }
-
 
 /*
  
@@ -197,7 +219,7 @@ extension ShopView{
     var fishingGear :some View{
         VStack{
             Text("fishing gear")
-                .font(.system(size: 24, weight: .bold , design: .serif))
+                .font(.system(size: 18, weight: .bold , design: .serif))
                 .frame(maxWidth: .infinity , alignment:  .leading)
                 .padding(.leading)
             
@@ -210,7 +232,7 @@ extension ShopView{
                         if productt.categoryId == 1 {
                             
                             NavigationLink {
-                                ProductDetailsView(product: productt, isfavourite: productt.liked)
+                                ProductDetailsView( product: productt, isFavourite: productt.liked)
                             } label: {
                                 ProductCell(productt: productt)
                                   //  .padding()
@@ -234,11 +256,11 @@ extension ShopView{
     var baitfishing :some View{
         VStack{
             Text("bait fish")
-                .font(.system(size: 24, weight: .bold , design: .serif))
+                .font(.system(size: 18, weight: .bold , design: .serif))
                 .frame(maxWidth: .infinity , alignment:  .leading)
                 .padding(.leading)
             
-            ScrollView(.horizontal){
+            ScrollView(.horizontal ,showsIndicators: false){
                 
                 HStack{
                     
@@ -247,7 +269,7 @@ extension ShopView{
                         if productt.categoryId == 2 {
                             
                             NavigationLink {
-                                ProductDetailsView(product: productt, isfavourite: productt.liked)
+                                ProductDetailsView( product: productt, isFavourite: productt.liked)
                             } label: {
                                 ProductCell(productt: productt)
                                   //  .padding()
@@ -291,7 +313,7 @@ extension ShopView{
                      .padding(20)
                      .background(Color(.blue))
                      .cornerRadius(50)
-                     .shadow(color: .black, radius:30, x: 0, y: 0)
+                     .shadow(color: .black, radius:10, x: 0, y: 0)
                      .padding(.trailing)
                      .opacity(IsFilterApplied ? 1 : 0 )
                      
@@ -312,7 +334,7 @@ extension ShopView{
                       .padding(20)
                       .background(Color("Primary Blue"))
                       .cornerRadius(50)
-                      .shadow(color: .black, radius:30, x: 0, y: 0)
+                      .shadow(color: .black, radius:10, x: 0, y: 0)
                       .padding(.trailing)
                       
                       .opacity(IsFilterApplied ? 1 : 0 )
@@ -335,7 +357,7 @@ extension ShopView{
              .padding(20)
              .background(Color("Primary Blue"))
              .cornerRadius(50)
-             .shadow(color: .black, radius:30, x: 0, y: 0)
+             .shadow(color: .black, radius:10, x: 0, y: 0)
              .rotationEffect(Angle(degrees: IsFilterApplied ? 0 : 180))
              .padding(.trailing)
              .padding(.bottom)

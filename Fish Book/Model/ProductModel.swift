@@ -35,9 +35,7 @@ struct ProductFavouriteModel:Codable {
     let updatedOn :String?
 }
 
-struct Allproducts :Codable {
-    let products:[ProductModel]
-}
+
 
 struct AddProductModel:Codable {
     let price : Int
@@ -64,5 +62,5 @@ struct MyProductModel:Codable {
     let imageUrl:String
     let categoryId:Int64
     let createdOn :String
-    let updatedOn :String
+    let updatedOn :String?
 }

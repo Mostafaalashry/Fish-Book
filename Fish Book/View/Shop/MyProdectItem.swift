@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MyProdectItem: View {
     let product  :MyProductModel
@@ -16,30 +17,32 @@ struct MyProdectItem: View {
             HStack(spacing: 0){
                 VStack(alignment: .leading , spacing: 0){
                   
-                    Text( product.updatedOn ?? product.createdOn)
+                    Text( product.updatedOn?.prefix(10) ?? product.createdOn.prefix(10))
                         .font(.system(size: 16,weight: .light,design: .default))
                         //.foregroundColor(Color("Primary Blue"))
                         .padding(.leading)
                         .padding(.top)
                         Text(product.title)
-                            .font(.system(size: 25,weight: .bold,design: .serif))
+                            .font(.system(size: 20,weight: .bold,design: .serif))
                             .foregroundColor(Color("Primary Blue"))
                             .padding(.leading)
                     
                     
                     Text(product.content)
-                        .font(.system(size: 16,weight: .light,design: .default))
+                        .font(.system(size: 12,weight: .light,design: .default))
                         .padding(.horizontal)
                         .padding(.top,5)
 
                     Text("$ " + String(product.price))
-                        .font(.system(size: 18,weight: .bold,design: .serif))
+                        .font(.system(size: 16,weight: .bold,design: .serif))
                         .padding(.leading)
                         .padding(.top,5)
 
                 }
                 
-                Image(product.imageUrl)
+              //  Image(product.imageUrl)
+                WebImage(url: URL(string: product.imageUrl.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+
                     .resizable()
                     .frame(width: 150 , height: 150 ,alignment: .center)
                     .scaledToFit()
@@ -64,13 +67,9 @@ struct MyProdectItem: View {
                     Button {
                         print("Update")
                     } label: {
-                        Text("delete")
+                        Text("Update")
                     }
-                    Button {
-                        print("delete3")
-                    } label: {
-                        Text("delete")
-                    }
+                  
 
                 }, label: {
                    Image(systemName: "ellipsis")

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct ProductCell: View {
     var productt: ProductModel
@@ -20,7 +22,10 @@ struct ProductCell: View {
         VStack {
             VStack {
                 VStack{
-                    Image(productt.imageUrl ?? "")
+                   // Image(productt.imageUrl ?? "")
+                   // WebImage(url: URL(string: productt.imageUrl ?? ""))
+                    WebImage(url: URL(string: productt.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(12)
@@ -35,21 +40,21 @@ struct ProductCell: View {
                 VStack(spacing: 0){
                     
                     Text(productt.title)
-                        .font(.system(size: 25, weight: .bold))
+                        .font(.system(size: 20, weight: .bold))
                         .foregroundColor(Color("b"))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                         .padding(.leading)
                    
                     Text( String(productt.content.prefix(26)) + "...")
-                        .font(.system(size: 13,weight: .light,design: .serif))
+                        .font(.system(size: 11,weight: .light,design: .serif))
                         .foregroundColor(Color("gray2"))
                         .frame( maxWidth: 150, alignment: .center)
                         
                     
                    
-                    
-                     Text("$ \(String(format: "%.1f", productt.price)) ") // Format the price here
-                            .font(.system(size: 17, weight: .bold))
+                   //(String(format: "%.1f",)
+                     Text(" $ \(productt.price) ") // Format the price here
+                            .font(.system(size: 13, weight: .bold))
                             .foregroundColor(Color("b"))
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                             .padding(.top,5)
@@ -61,7 +66,8 @@ struct ProductCell: View {
                 
         }
         .frame(width: 155, height: 230)
-        .padding(7)
+        .padding(.leading ,10)
+        .padding(.top ,5)
         
     }
 }
