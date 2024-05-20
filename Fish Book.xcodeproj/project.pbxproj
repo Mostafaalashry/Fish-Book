@@ -10,6 +10,13 @@
 		7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FD9F2B910F990040313D /* ForecastResponse.swift */; };
 		7208FDA42B911F270040313D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA32B911F270040313D /* WeatherView.swift */; };
 		7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7208FDA62B913E800040313D /* SDWebImageSwiftUI */; };
+		721F901B2BFA25A700693D12 /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901A2BFA25A700693D12 /* MyPostsView.swift */; };
+		721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */; };
+		722DAAC82BF8903B00FE703D /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAAC72BF8903B00FE703D /* AddPostView.swift */; };
+		722DAACA2BF89AAD00FE703D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAAC92BF89AAD00FE703D /* PostModel.swift */; };
+		722DAACC2BF89B0900FE703D /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAACB2BF89B0900FE703D /* AddPostViewModel.swift */; };
+		722DAACE2BF9D76900FE703D /* AllPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAACD2BF9D76900FE703D /* AllPostsViewModel.swift */; };
+		722DAAD02BF9DB7200FE703D /* AllPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAACF2BF9DB7200FE703D /* AllPostsView.swift */; };
 		7230F78A2BF1F911000BA6E1 /* FishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230F7892BF1F911000BA6E1 /* FishModel.swift */; };
 		7230F78D2BF1FAE5000BA6E1 /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230F78C2BF1FAE5000BA6E1 /* FishViewModel.swift */; };
 		7230F7902BF1FBB4000BA6E1 /* FishItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230F78F2BF1FBB4000BA6E1 /* FishItemView.swift */; };
@@ -20,6 +27,7 @@
 		7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91A2B8406BF00DA1AD0 /* LottieView.swift */; };
 		7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */; };
 		725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A52022BD5350700F3E32D /* MyProdectItem.swift */; };
+		725E83D12BF78FA1004787EC /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725E83D02BF78FA1004787EC /* PostView.swift */; };
 		726714732BC4C09700333B90 /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714722BC4C09700333B90 /* AllProductsViewModel.swift */; };
 		726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714762BC4CC7B00333B90 /* ProductModel.swift */; };
 		7267147A2BC4D97400333B90 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714792BC4D97400333B90 /* data.swift */; };
@@ -55,8 +63,8 @@
 		72D091982BD7BBA60046789B /* MyProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D091972BD7BBA60046789B /* MyProductViewModel.swift */; };
 		72D0919A2BD7C3C80046789B /* MyProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D091992BD7C3C80046789B /* MyProductsView.swift */; };
 		72D0919C2BD7D7930046789B /* UpdateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0919B2BD7D7930046789B /* UpdateProductView.swift */; };
-		72D0919E2BD7F5C10046789B /* CC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0919D2BD7F5C10046789B /* CC.swift */; };
 		72D091A02BD800300046789B /* AuthenticationModeel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0919F2BD800300046789B /* AuthenticationModeel.swift */; };
+		72D973012BF4CBBF00B8C7AA /* UpdateProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D973002BF4CBBF00B8C7AA /* UpdateProductViewModel.swift */; };
 		72E8799F2BDE430800258CF6 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E8799E2BDE430800258CF6 /* UserInfoModel.swift */; };
 		72E879A12BDE43DC00258CF6 /* UpdateUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E879A02BDE43DC00258CF6 /* UpdateUserInfoView.swift */; };
 		72E879A32BDE5B6F00258CF6 /* UpdateUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E879A22BDE5B6F00258CF6 /* UpdateUserInfoViewModel.swift */; };
@@ -92,6 +100,13 @@
 		40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_Book_Fish_BookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7208FD9F2B910F990040313D /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		7208FDA32B911F270040313D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		721F901A2BFA25A700693D12 /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
+		721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsViewModel.swift; sourceTree = "<group>"; };
+		722DAAC72BF8903B00FE703D /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		722DAAC92BF89AAD00FE703D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		722DAACB2BF89B0900FE703D /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		722DAACD2BF9D76900FE703D /* AllPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsViewModel.swift; sourceTree = "<group>"; };
+		722DAACF2BF9DB7200FE703D /* AllPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsView.swift; sourceTree = "<group>"; };
 		7230F7892BF1F911000BA6E1 /* FishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishModel.swift; sourceTree = "<group>"; };
 		7230F78C2BF1FAE5000BA6E1 /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
 		7230F78F2BF1FBB4000BA6E1 /* FishItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishItemView.swift; sourceTree = "<group>"; };
@@ -102,6 +117,7 @@
 		7259F91A2B8406BF00DA1AD0 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		725A52022BD5350700F3E32D /* MyProdectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProdectItem.swift; sourceTree = "<group>"; };
+		725E83D02BF78FA1004787EC /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		726714722BC4C09700333B90 /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
 		726714762BC4CC7B00333B90 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		726714792BC4D97400333B90 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -140,8 +156,8 @@
 		72D091972BD7BBA60046789B /* MyProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductViewModel.swift; sourceTree = "<group>"; };
 		72D091992BD7C3C80046789B /* MyProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsView.swift; sourceTree = "<group>"; };
 		72D0919B2BD7D7930046789B /* UpdateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProductView.swift; sourceTree = "<group>"; };
-		72D0919D2BD7F5C10046789B /* CC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CC.swift; sourceTree = "<group>"; };
 		72D0919F2BD800300046789B /* AuthenticationModeel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModeel.swift; sourceTree = "<group>"; };
+		72D973002BF4CBBF00B8C7AA /* UpdateProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProductViewModel.swift; sourceTree = "<group>"; };
 		72E8799E2BDE430800258CF6 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		72E879A02BDE43DC00258CF6 /* UpdateUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoView.swift; sourceTree = "<group>"; };
 		72E879A22BDE5B6F00258CF6 /* UpdateUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoViewModel.swift; sourceTree = "<group>"; };
@@ -253,13 +269,29 @@
 				72D091972BD7BBA60046789B /* MyProductViewModel.swift */,
 				72E879A22BDE5B6F00258CF6 /* UpdateUserInfoViewModel.swift */,
 				7230F78C2BF1FAE5000BA6E1 /* FishViewModel.swift */,
+				72D973002BF4CBBF00B8C7AA /* UpdateProductViewModel.swift */,
+				722DAACB2BF89B0900FE703D /* AddPostViewModel.swift */,
+				722DAACD2BF9D76900FE703D /* AllPostsViewModel.swift */,
+				721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */,
 			);
 			path = " View Models";
+			sourceTree = "<group>";
+		};
+		725E83CF2BF78F7A004787EC /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				725E83D02BF78FA1004787EC /* PostView.swift */,
+				722DAAC72BF8903B00FE703D /* AddPostView.swift */,
+				722DAACF2BF9DB7200FE703D /* AllPostsView.swift */,
+				721F901A2BFA25A700693D12 /* MyPostsView.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		726714742BC4C13100333B90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				725E83CF2BF78F7A004787EC /* Post */,
 				7230F78E2BF1FB8F000BA6E1 /* Fish */,
 				7230F78B2BF1FA4C000BA6E1 /* Shop */,
 				72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */,
@@ -270,7 +302,6 @@
 				727D223A2B72B2580079FE9E /* LoginView.swift */,
 				7208FDA32B911F270040313D /* WeatherView.swift */,
 				7284103C2BC722E9004FB570 /* MainTapp.swift */,
-				72D0919D2BD7F5C10046789B /* CC.swift */,
 				72E879A02BDE43DC00258CF6 /* UpdateUserInfoView.swift */,
 				7274DEA12BE4DB69008212B4 /* MainTabCustom.swift */,
 			);
@@ -285,6 +316,7 @@
 				72D0919F2BD800300046789B /* AuthenticationModeel.swift */,
 				72E8799E2BDE430800258CF6 /* UserInfoModel.swift */,
 				7230F7892BF1F911000BA6E1 /* FishModel.swift */,
+				722DAAC92BF89AAD00FE703D /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -631,6 +663,8 @@
 				7230F78D2BF1FAE5000BA6E1 /* FishViewModel.swift in Sources */,
 				72FD90772BA6146600501FBC /* AddProductView.swift in Sources */,
 				72F5F3B52B9F5BFF00269998 /* SignUpViewModel.swift in Sources */,
+				725E83D12BF78FA1004787EC /* PostView.swift in Sources */,
+				721F901B2BFA25A700693D12 /* MyPostsView.swift in Sources */,
 				729007212BA8AAA900FEA563 /* PasswordText.swift in Sources */,
 				72D091A02BD800300046789B /* AuthenticationModeel.swift in Sources */,
 				7284103D2BC722E9004FB570 /* MainTapp.swift in Sources */,
@@ -643,10 +677,11 @@
 				729007232BA8AB2200FEA563 /* EmailText.swift in Sources */,
 				729276012B83D69C005BC34B /* GifView.swift in Sources */,
 				7230F7902BF1FBB4000BA6E1 /* FishItemView.swift in Sources */,
+				722DAACE2BF9D76900FE703D /* AllPostsViewModel.swift in Sources */,
 				726714732BC4C09700333B90 /* AllProductsViewModel.swift in Sources */,
+				722DAACA2BF89AAD00FE703D /* PostModel.swift in Sources */,
 				724DDCFE2B9C6FBD0088879F /* LoginViewModel.swift in Sources */,
 				7284103F2BC75993004FB570 /* ProductDetailsView.swift in Sources */,
-				72D0919E2BD7F5C10046789B /* CC.swift in Sources */,
 				72CD7F662BC707150076618C /* ProduuctItemHeaderView.swift in Sources */,
 				727D223D2B72B2BD0079FE9E /* RegestrationView.swift in Sources */,
 				7267147A2BC4D97400333B90 /* data.swift in Sources */,
@@ -655,9 +690,13 @@
 				7208FDA42B911F270040313D /* WeatherView.swift in Sources */,
 				729007252BA8B4C600FEA563 /* ProductCell.swift in Sources */,
 				72A61DDD2BAD9DA7002FEA85 /* AddProductViewModel.swift in Sources */,
+				722DAAC82BF8903B00FE703D /* AddPostView.swift in Sources */,
 				7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */,
+				721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */,
+				722DAACC2BF89B0900FE703D /* AddPostViewModel.swift in Sources */,
 				72D0919A2BD7C3C80046789B /* MyProductsView.swift in Sources */,
 				72A61DDF2BADC998002FEA85 /* ImagePicker.swift in Sources */,
+				722DAAD02BF9DB7200FE703D /* AllPostsView.swift in Sources */,
 				72E879A12BDE43DC00258CF6 /* UpdateUserInfoView.swift in Sources */,
 				727D22392B729C0B0079FE9E /* Validations.swift in Sources */,
 				72FCD9FD2BCCF6A500A896FD /* ProfileView.swift in Sources */,
@@ -665,6 +704,7 @@
 				7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */,
 				729DF9A22BCE14C6003D4165 /* FavouriteProductItem.swift in Sources */,
 				727D223B2B72B2580079FE9E /* LoginView.swift in Sources */,
+				72D973012BF4CBBF00B8C7AA /* UpdateProductViewModel.swift in Sources */,
 				727D220F2B729BD70079FE9E /* Fish_BookApp.swift in Sources */,
 				724DDCFB2B9C63050088879F /* WebServices.swift in Sources */,
 				7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */,

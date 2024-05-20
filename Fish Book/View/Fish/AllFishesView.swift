@@ -8,33 +8,38 @@
 import SwiftUI
 
 struct AllFishesView: View {
-    @State private var vm : FishViewModel?
+    @EnvironmentObject private var vm : FishViewModel
    //  var datafishes = dataa.allFishes
    
     var body: some View {
         NavigationView{
+           
+               // Color("lightGray")
             ScrollView(showsIndicators: false  ){
-                ForEach(vm!.allFishes ,  id: \.id) { fish in
+                
+                ForEach(vm.allFishes ,  id: \.id) { fish in
                     NavigationLink {
                         FishDetaisView(fish: fish)
                     } label: {
-                       FishItemView(fish: fish)
-                           
+                        FishItemView(fish: fish)
+                        
                             .frame(width: UIScreen.main.bounds.width)
                     }
                     
-                   
+                    
                 }
+                
                 
                 Spacer()
             }.frame(width: UIScreen.main.bounds.width)
                 .navigationTitle("Fish Information")
-                
+                .background(Color("lightGray"))
+        
             
             
         }
         .onAppear(
-            perform: vm?.fetchFishes
+            perform: vm.fetchFishes
         )
         
     }

@@ -31,10 +31,12 @@ struct ProduuctItemHeaderView: View {
                     .padding(.top,5)
 
             }
+            .frame(alignment: .leading)
+            Spacer()
             
             WebImage(url: URL(string: product.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
                 .resizable()
-                .frame(width: 150 , height: 150 ,alignment: .center)
+                .frame(width: 150 , height: 150 ,alignment: .trailing)
                 .scaledToFit()
                 .cornerRadius(12)
             

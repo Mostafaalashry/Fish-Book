@@ -27,6 +27,7 @@ struct ProductDetailsView: View {
         self.product = product
         self._isFavourite = State(initialValue: isFavourite)
     }
+    
     var body: some View {
         VStack{
            // Image(product.imageUrl ?? "")
@@ -61,6 +62,7 @@ struct ProductDetailsView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 40,height: 40)
+                        .foregroundColor(Color("gray"))
                     
                     Text(product.publisherName)
                     Spacer()

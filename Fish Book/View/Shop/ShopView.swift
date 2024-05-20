@@ -324,8 +324,8 @@ extension ShopView{
              
             
               
-              Button {
-                  showingPopover.toggle()
+              NavigationLink {
+                  AddProductView()
               } label: {
                   Image(systemName: "plus")
                       .resizable()
@@ -341,13 +341,9 @@ extension ShopView{
                       
               }
               .disabled(!IsFilterApplied)
-              .popover(isPresented: $showingPopover) {
-                  if showingPopover{
-                      AddProductView(showingPopover: $showingPopover)
-                  }
+            
                   
-                  
-              }
+              
             
         
           Image(systemName: "line.3.horizontal.decrease" )

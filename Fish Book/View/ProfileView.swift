@@ -64,8 +64,8 @@ struct ProfileView: View {
                 }
                 
                 Picker(selection: $selection, label: Text("")) {
-                    Text("MyProducts").tag(0)
-                    Text("View 2").tag(1)
+                    Text("My products").tag(0)
+                    Text("My posts").tag(1)
                     Text("View 3").tag(2)
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -80,7 +80,7 @@ struct ProfileView: View {
                         //    .padding(.top,30)
                     
                 } else if selection == 1 {
-                    View2()
+                    MyPostsView()
                 } else {
                     View3()
                 }
@@ -134,11 +134,7 @@ struct ProfileView_Previews: PreviewProvider {
  */
 
 
-struct View2: View {
-    var body: some View {
-        Text("View 22")
-    }
-}
+
 
 struct View3: View {
     var body: some View {

@@ -64,3 +64,21 @@ struct MyProductModel:Codable {
     let createdOn :String
     let updatedOn :String?
 }
+
+struct UploadPrroductModel:Codable {
+    let  id   : Int64
+    let  title  :  String
+    let  content   : String
+    let  categoryId :   Int64
+    let  price    : Int32
+    let  imageUrl  :  String
+    
+    init(id: Int64, title: String, content: String, categoryId: Int64, price: Int32, imageUrl: String) {
+        self.id = id
+        self.title = title
+        self.content = content
+        self.categoryId = categoryId
+        self.price = price
+        self.imageUrl = imageUrl
+    }
+}

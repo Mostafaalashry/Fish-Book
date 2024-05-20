@@ -28,6 +28,7 @@ struct FishItemView: View {
             WebImage(url: URL(string: fish.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
            // Image(fish.imageUrl ?? "firstScreen")
                 .resizable()
+                .scaledToFit()
                 .frame(width: 150 , height: 150 ,alignment: .center)
                 .scaledToFit()
                 .cornerRadius(7)
@@ -40,7 +41,7 @@ struct FishItemView: View {
         
        // .background(Color.white.cornerRadius(12).shadow(color: Color("Primary Blue").opacity(0.4), radius: 10))
         
-        .background(Color("lightGray").cornerRadius(7))
+        .background(Color.white.cornerRadius(7))
     }
 }
 /*

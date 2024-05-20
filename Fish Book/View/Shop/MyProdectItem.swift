@@ -64,10 +64,12 @@ struct MyProdectItem: View {
                         Text("Delete")
                             .foregroundColor(Color.red)
                     }
-                    Button {
-                        print("Update")
+                    NavigationLink {
+                        UpdateProductView(product: product)
                     } label: {
+                        
                         Text("Update")
+                        
                     }
                   
 

@@ -23,12 +23,7 @@ struct MainTabCustom: View {
     var body: some View {
         VStack( spacing: 0) {
             TabView(selection: $activeTab) {
-                Color.orange
-                    .overlay(content: {
-                        Text("DevTechie.com")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                    })
+                AllPostsView()
                     .tag(Tab.home)
                     .edgesIgnoringSafeArea(.bottom)
                 WeatherView()
@@ -43,12 +38,7 @@ struct MainTabCustom: View {
                     .tag(Tab.profile)
                     .edgesIgnoringSafeArea(.bottom)
                 
-                Color.pink
-                    .overlay(content: {
-                        Text(".com")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                    })
+                AllFishesView()
                     .tag(Tab.fishes)
                     .edgesIgnoringSafeArea(.bottom)
             }

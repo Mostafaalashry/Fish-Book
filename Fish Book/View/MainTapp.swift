@@ -22,8 +22,7 @@ struct MainTapp: View {
             VStack(spacing: 0){
                 TabView(selection: $selected){
                     
-                    AllFishesView()
-
+                    WeatherView()
                         .tag(tabItems[0])
                         .ignoresSafeArea(.all)
                     
@@ -39,6 +38,8 @@ struct MainTapp: View {
                         .tag(tabItems[3])
                        // .ignoresSafeArea(.all)
                     
+
+
                     AllFishesView()
                         .tag(tabItems[4])
                         //.ignoresSafeArea(.all)

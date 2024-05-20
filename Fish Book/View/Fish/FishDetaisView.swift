@@ -17,8 +17,8 @@ struct FishDetaisView: View {
             WebImage(url: URL(string: fish.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
            // Image((fish.imageUrl)!)
                 .resizable()
-                .scaledToFill()
-                .frame(height: UIScreen.main.bounds.height/3.5,alignment: .center)
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3.5,alignment: .center)
                 .offset(x: 0 ,y: isAnimated ? 0 : 30)
                 .onAppear{
                     withAnimation (.easeInOut(duration: 0.5)) {
@@ -41,19 +41,19 @@ struct FishDetaisView: View {
                         HStack{
                             Spacer()
                             Text(fishDetails.header)
-                                .font(.system(size: 15, weight: .semibold , design: .serif))
+                                .font(.system(size: 22, weight: .semibold , design: .serif))
                                 .frame(maxWidth: .infinity , alignment:.trailing)
                                 .padding(.leading ,20)
                                 .padding(.top ,5)
                         }
                         HStack{
                             
-                            
                             Text(fishDetails.content)
-                                .font(.system(size: 9, weight: .semibold , design: .serif))
+                                .font(.system(size: 15, weight: .semibold , design: .serif))
                                 .frame(maxWidth: .infinity , alignment:.trailing)
                                 .padding(.leading ,20)
                                 .padding(.top ,5)
+                                .multilineTextAlignment(.trailing)
                         }
                     }
                     .padding(.bottom ,25)
@@ -70,6 +70,7 @@ struct FishDetaisView: View {
                 .padding(.horizontal ,5)
                // .frame( height: UIScreen.main.bounds.height/2,alignment: .center)
                 .background(Color("lightGray").cornerRadius(40.0).shadow(color: Color("Primary Blue").opacity(0.4), radius: 7))
+                
                 .edgesIgnoringSafeArea(.all )
                 
                

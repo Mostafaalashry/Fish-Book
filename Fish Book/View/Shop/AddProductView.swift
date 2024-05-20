@@ -18,7 +18,8 @@ struct AddProductView: View {
     @State private var name: String = ""
     @State private var price: String = ""
     @State private var imageURL: String = ""
-    @Binding var showingPopover:Bool
+    @Environment(\.dismiss) var dismiss
+
     
     @State private var alertMessege: String = "ok"
     @StateObject private var addProductVM = AddProduuctViewModel()
@@ -300,7 +301,7 @@ struct AddProductView: View {
         .alert(alertMessege, isPresented: $showAlert) {
             Button("ok",role: .cancel) {
                 if alertMessege == "the prroduct added Successfully" {
-                    showingPopover = false
+                    dismiss()
                 }
                 
             }
@@ -373,64 +374,8 @@ struct AddProductView: View {
              
         }
     
-/*
-    func uploadImage(image: UIImage  ) {
-                guard let image = image.jpegData(compressionQuality: 0.8) else {
-                    print("cant compress image")
-                    return
-                }
-                
-                guard let url = URL(string: "http://localhost:8080/api/image/uploadProductImage") else {
-                    print("invalid urrl for image")
-                    return
-                }
-                
-                let boundary = UUID().uuidString
-                
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-                
-                var body = Data()
 
-               
-                body.append("--\(boundary)\r\n".data(using: .utf8)!)
-
-                
-                body.append("Content-Disposition: form-data; name=\"image\";     filename=\"image.jpg\"\r\n".data(using: .utf8)!)
-                body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-                body.append(image)
-                body.append("\r\n".data(using: .utf8)!)
-
-                body.append("--\(boundary)--\r\n".data(using: .utf8)!)
-                
-                request.httpBody = body
-                
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    if let error = error {
-                        print("Error: \(error)")
-                    } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                        if let responseData = data {
-                            do {
-                                let decodedResponse = try JSONDecoder().decode(ResponseData.self, from: responseData)
-                                addProductVM.imageURL =  String(decodedResponse.url)
-                                
-                               
-                                print("Image URL: \(addProductVM.imageURL)")
-                                
-                                DispatchQueue.main.async {
-                                    self.uploadSucsess = true
-                                }
-                            } catch {
-                                print("Error decoding response: \(error)")
-                            }
-                        }
-                    }
-                }
-                 //print( httpResponse.statusCode)
-                task.resume()
-            }
-    */
+    
     
 }
 /*
@@ -442,20 +387,3 @@ struct AddProductView_Previews: PreviewProvider {
 */
 
 
-
-/*
- let task = URLSession.shared.dataTask(with: request) { data, response, error in
-     if let error = error {
-         print("Error: \(error)")
-     } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-         if let responseData = data {
-             // Handle your response data here
-             print("Response Data: \(responseData)")
-             DispatchQueue.main.async {
-                 self.uploadSuccess = true
-             }
-         }
-     }
- }
- 
- */

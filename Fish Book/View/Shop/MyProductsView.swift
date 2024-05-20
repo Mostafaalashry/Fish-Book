@@ -18,11 +18,7 @@ struct MyProductsView: View {
                 
                 
                 MyProdectItem(product: product)
-                //  .padding(.vertical,20)
-                //   .frame(width: UIScreen.main.bounds.width)
-                
-                
-                
+             
                 
             }.frame(width: UIScreen.main.bounds.width)
             
