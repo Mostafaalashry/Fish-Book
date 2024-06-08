@@ -48,12 +48,8 @@ struct AllPostsView: View {
                     .background(Color.white)
                     .padding(.top ,50)
                 }
-
-           
-              
-                        
-               
-                    ForEach((vm.allPosts) , id: \.id) { post in
+       
+                ForEach((vm.allPosts.reversed()) , id: \.id) { post in
                                
                         PostView(post: post , isFavourite: post.postLiked, numberOfLikes: Int(post.numberOfLikes!))
                     }
@@ -62,8 +58,6 @@ struct AllPostsView: View {
                     .frame(height: 20)
                 }
                //.padding(.bottom , 20)
-               
-            
         }
         .onAppear(
             perform: vm.fetchPosts
