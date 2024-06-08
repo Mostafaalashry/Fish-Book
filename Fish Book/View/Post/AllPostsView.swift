@@ -61,7 +61,15 @@ struct AllPostsView: View {
         }
         .onAppear(
             perform: vm.fetchPosts
+            
         )
+        .onAppear {
+            if let firstPostId = vm.allPosts.first?.id {
+                print(firstPostId)
+            } else {
+                print("No posts available")
+            }
+        }
         .background(Color("lightGray"))
         //.padding(.bottom , 20)
        // .edgesIgnoringSafeArea(.vertical)

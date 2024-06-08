@@ -14,7 +14,7 @@ struct MyPostsView: View {
             
             ForEach((vm.allPosts) , id: \.id) { post in
                        
-                PostView(post: post , isFavourite: post.postLiked, numberOfLikes: Int(post.numberOfLikes!))
+                MyPostView(post: post , isFavourite: post.postLiked, numberOfLikes: Int(post.numberOfLikes!))
             }
            
         Spacer()

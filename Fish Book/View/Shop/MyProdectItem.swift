@@ -58,7 +58,7 @@ struct MyProdectItem: View {
                
                 Menu(content: {
                     Button {
-                        vm.deleteMyProduct( product: product)
+                        vm.deleteMyProduct( product : product)
                     } label: {
                         
                         Text("Delete")

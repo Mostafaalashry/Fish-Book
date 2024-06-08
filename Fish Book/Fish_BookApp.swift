@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct Fish_BookApp: App {
+    
+    
     @StateObject var vm = AllProductViewModel()
     @StateObject var vmfish = FishViewModel()
     @StateObject var vmF = FavouriteProductsViewModel()
     @StateObject var vmM = MyProductViewModel()
     @StateObject var vmPosts = AllPostsViewModel()
     @StateObject var vmMyPosts = MyPostsViewModel()
+   
+    @StateObject var vmComments = AllCommentsViewModel()
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             WelcomeView()
@@ -24,6 +30,7 @@ struct Fish_BookApp: App {
                 .environmentObject(vmfish)
                 .environmentObject(vmPosts)
                 .environmentObject(vmMyPosts)
+                .environmentObject(vmComments)
 
             
         }

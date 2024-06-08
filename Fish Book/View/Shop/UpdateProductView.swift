@@ -277,7 +277,7 @@ struct UpdateProductView: View {
                     
                     if productUpdatedVM.imageUrl == ""{
                         uploadImage {
-                               // This closure will be executed once the first function is completed
+                              
                                self.publish()
                            }
                     }

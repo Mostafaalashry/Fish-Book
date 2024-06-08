@@ -10,17 +10,12 @@ import SDWebImageSwiftUI
 struct ProductDetailsView: View {
    // var product  = dataa.allProducts.first
     @State private var isAnimated = false
+    @State private var showAlert = false
     
-   
+    @EnvironmentObject var vm :AllProductViewModel
     @State var product:ProductModel
     @State  var isFavourite:Bool
-    /*
-    init(isAnimated: Bool = false, product: ProductModel, isfavourite: Bool) {
-        self.isAnimated = isAnimated
-        self.product = product
-        self._isFavourite = State(initialValue: product.liked)
-    }
-    */
+  
     init(isAnimated: Bool = false, product: ProductModel, isFavourite: Bool) {
         self._isAnimated = State(initialValue: isAnimated)
        
@@ -45,24 +40,61 @@ struct ProductDetailsView: View {
                 }
                 .padding(.vertical,30)
             ScrollView(showsIndicators: false){
-              
+                HStack{
                     Text(product.title)
                         .font(.system(size: 20, weight: .semibold , design: .serif))
                         .frame(maxWidth: .infinity , alignment:  .leading)
                         .padding(.leading ,20)
                         .padding(.top ,20)
+                    
+                    Spacer()
+                    
+                    Button {
+                        showAlert = true
+                    } label: {
+                        Image(systemName: "bookmark.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 10,height: 10)
+                            .foregroundColor(Color("gray"))
+                    }
+                    .frame(alignment: .trailing)
+                    .padding(.trailing , 20)
+                    .padding(.top , 22)
+
+                    
+                    
+                    
+                    
+                    
+                }
+                   
                 HStack{
-                    Text(product.updatedOn ?? product.createdOn)
+                    Text(product.updatedOn?.prefix(10) ?? product.createdOn.prefix(10))
                         .frame(alignment: .leading )
                     Spacer()
                 }
                 .padding(.leading,22)
                 HStack{
-                   Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40,height: 40)
-                        .foregroundColor(Color("gray"))
+                    
+                    if product.imageUrl == nil || product.imageUrl==""{
+                        Image(systemName: "person.crop.circle.fill")
+                             .resizable()
+                             .scaledToFill()
+                             .frame(width: 40,height: 40)
+                             .foregroundColor(Color("gray"))
+                    }
+                    else{
+                        
+                        WebImage(url: URL(string: product.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40,height: 40)
+                            .foregroundColor(Color("gray"))
+                            .clipShape(Circle())
+                    }
+                    
+                  
                     
                     Text(product.publisherName)
                     Spacer()
@@ -78,10 +110,15 @@ struct ProductDetailsView: View {
                     Spacer()
                     
                 }
-                Text(product.content)
-                    .font(.system(size: 15,weight: .medium,design: .serif))
-                    .padding(.leading,19)
-                    .padding(.bottom)
+                HStack{
+                    Text(product.content)
+                        .font(.system(size: 15,weight: .medium,design: .serif))
+                        .padding(.leading,19)
+                        .padding(.bottom)
+                        .frame(alignment: .leading)
+                    Spacer()
+                }
+            
                 
                 Spacer()
                 HStack{
@@ -139,8 +176,25 @@ struct ProductDetailsView: View {
         }
         .edgesIgnoringSafeArea(.bottom )
         
+        .alert(isPresented: $showAlert) {
+                  Alert(
+                      title: Text("Report"),
+                      message: Text("Are you sure do you want to send a report."),
+                      primaryButton: .default(Text("OK")) {
+                         
+                          
+                          vm.report(id: Int(product.id))
+                        
+                      },
+                      secondaryButton: .cancel(Text("Cancel")) {
+                         
+                      }
+                  )
+              }
+        }
         
-    }
+        
+    
 }
 
  
@@ -150,6 +204,25 @@ struct ProductDetailsView: View {
         
     
 /*
+ .alert("Are you sure do you want to send a report ", isPresented: $showAlert) {
+     
+     Button("OK", role: .cancel) {
+         WebServices().sendID(httpMethod:"PUT",urlString: "http://localhost:8080/api/products/repoort/\(product.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+             switch result {
+             case .success(let success):
+               
+                 print (success)
+             case .failure(let error):
+                 print(error.localizedDescription)
+             }
+         }
+     }
+     Button("cancel", role: .cancel) {
+         
+         }
+     }
+ 
+ 
  struct ProductDetailsView_Previews: PreviewProvider {
      static var previews: some View {
          ProductDetailsView()

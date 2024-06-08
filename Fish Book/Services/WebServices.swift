@@ -366,8 +366,7 @@ class WebServices {
        // request.addValue(" application/json", forHTTPHeaderField: "Content-Type")
 
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        print("second "+token)
-       
+      
        
         
         URLSession.shared.dataTask(with: request) { data, response, error in

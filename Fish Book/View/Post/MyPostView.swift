@@ -2,19 +2,19 @@
 //  PostView.swift
 //  Fish Book
 //
-//  Created by mostafa on 08/06/2024.
+//  Created by mostafa on 17/05/2024.
 //
 
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct PostView: View {
+struct MyPostView: View {
     
     let post:PostModel
     @State  var isFavourite:Bool
+    @State  var showAlert:Bool = false
     @State  var numberOfLikes:Int
-    @State  var showAlert = false
-    @EnvironmentObject var vm  : AllPostsViewModel
+    @EnvironmentObject var vm :MyPostsViewModel
 
     var body: some View {
         VStack(spacing: 0){
@@ -147,6 +147,7 @@ struct PostView: View {
                 }
 
                 Spacer()
+                
                 NavigationLink {
                     AllCommentsView(id: Int(post.id))
                 } label: {
@@ -164,26 +165,27 @@ struct PostView: View {
                     .padding(.trailing,50)
                 }
 
-               
+                
+             
                 // message
             }
             
         }
-        .alert(isPresented: $showAlert) {
-                  Alert(
-                      title: Text("Report"),
-                      message: Text("Are you sure do you want to send a report."),
-                      primaryButton: .default(Text("OK")) {
-                   
-                          
-                          vm.report(id: Int(post.id))
-                        
-                      },
-                      secondaryButton: .cancel(Text("Cancel")) {
-                         
-                      }
-                  )
-              }
+        
+        /*
+         Button {
+             showAlert = true
+         } label: {
+             Image(systemName: "bookmark.fill")
+                 .resizable()
+                 .scaledToFill()
+                 .frame(width: 10,height: 10)
+                 .foregroundColor(Color("gray"))
+         }
+         .frame(alignment: .trailing)
+         .padding(.trailing , 20)
+         .padding(.top , 22)
+         */
         .padding(.vertical)
         .background(Color.white)
         .overlay(
@@ -191,15 +193,15 @@ struct PostView: View {
             Menu(content: {
                 Button {
                  
-                 showAlert = true
                    
+                    vm.deleteMyPost(post: post)
                     
                 } label: {
                     
-                    Text("Report")
+                    Text("Delete")
                         .foregroundColor(Color.red)
                 }
-               
+              
               
 
             }, label: {
