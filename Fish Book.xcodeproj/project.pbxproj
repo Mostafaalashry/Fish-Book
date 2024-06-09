@@ -10,6 +10,7 @@
 		7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FD9F2B910F990040313D /* ForecastResponse.swift */; };
 		7208FDA42B911F270040313D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA32B911F270040313D /* WeatherView.swift */; };
 		7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7208FDA62B913E800040313D /* SDWebImageSwiftUI */; };
+		7218AE832C15A1CC00009983 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */; };
 		721F901B2BFA25A700693D12 /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901A2BFA25A700693D12 /* MyPostsView.swift */; };
 		721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */; };
 		722DAAC82BF8903B00FE703D /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAAC72BF8903B00FE703D /* AddPostView.swift */; };
@@ -107,6 +108,7 @@
 		40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_Book_Fish_BookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7208FD9F2B910F990040313D /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		7208FDA32B911F270040313D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		721F901A2BFA25A700693D12 /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
 		721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsViewModel.swift; sourceTree = "<group>"; };
 		722DAAC72BF8903B00FE703D /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7218AE812C159DE000009983 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		7230F78B2BF1FA4C000BA6E1 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +299,7 @@
 				721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */,
 				72D324CE2C150217009277C8 /* AddCoommentViewModel.swift */,
 				72D324D02C150538009277C8 /* AllCommentViewModel.swift */,
+				7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */,
 			);
 			path = " View Models";
 			sourceTree = "<group>";
@@ -310,10 +321,10 @@
 		726714742BC4C13100333B90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7218AE812C159DE000009983 /* ProfileView */,
 				725E83CF2BF78F7A004787EC /* Post */,
 				7230F78E2BF1FB8F000BA6E1 /* Fish */,
 				7230F78B2BF1FA4C000BA6E1 /* Shop */,
-				72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */,
 				7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */,
 				727D22102B729BD70079FE9E /* WelcomeView.swift */,
 				727D223C2B72B2BD0079FE9E /* RegestrationView.swift */,
@@ -694,6 +705,7 @@
 				727D22112B729BD70079FE9E /* WelcomeView.swift in Sources */,
 				725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */,
 				726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */,
+				7218AE832C15A1CC00009983 /* UserProfileViewModel.swift in Sources */,
 				7230F7922BF1FEE4000BA6E1 /* AllFishesView.swift in Sources */,
 				7230F78A2BF1F911000BA6E1 /* FishModel.swift in Sources */,
 				729007232BA8AB2200FEA563 /* EmailText.swift in Sources */,

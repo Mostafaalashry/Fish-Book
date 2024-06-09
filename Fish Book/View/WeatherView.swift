@@ -114,7 +114,7 @@ struct WeatherView: View {
                 DispatchQueue.main.sync {
                     self.forecast = decodeRResponse
                     
-                    print("Data is                      ",data)
+                    print("Data is",data)
            
 
                 }

@@ -19,6 +19,7 @@ struct Fish_BookApp: App {
     @StateObject var vmMyPosts = MyPostsViewModel()
    
     @StateObject var vmComments = AllCommentsViewModel()
+    @StateObject var userProfile = UserProfileViewModel()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
@@ -31,6 +32,7 @@ struct Fish_BookApp: App {
                 .environmentObject(vmPosts)
                 .environmentObject(vmMyPosts)
                 .environmentObject(vmComments)
+                .environmentObject(userProfile)
 
             
         }
