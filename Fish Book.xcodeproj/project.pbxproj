@@ -11,6 +11,14 @@
 		7208FDA42B911F270040313D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA32B911F270040313D /* WeatherView.swift */; };
 		7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7208FDA62B913E800040313D /* SDWebImageSwiftUI */; };
 		7218AE832C15A1CC00009983 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */; };
+		7218AE852C17448C00009983 /* FriendProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE842C17448C00009983 /* FriendProfileModel.swift */; };
+		7218AE872C17451D00009983 /* FriendProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE862C17451D00009983 /* FriendProfileViewModel.swift */; };
+		7218AE892C17461200009983 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE882C17461200009983 /* FriendProfileView.swift */; };
+		7218AE8B2C175D3E00009983 /* FriendPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE8A2C175D3E00009983 /* FriendPostsViewModel.swift */; };
+		7218AE8D2C175E5A00009983 /* FriendPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE8C2C175E5A00009983 /* FriendPostsView.swift */; };
+		7218AE8F2C177FDB00009983 /* FriendProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE8E2C177FDB00009983 /* FriendProductViewModel.swift */; };
+		7218AE932C17814600009983 /* FriendPrroductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE922C17814600009983 /* FriendPrroductItemView.swift */; };
+		7218AE952C17833400009983 /* FrriendAllPrroducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218AE942C17833400009983 /* FrriendAllPrroducts.swift */; };
 		721F901B2BFA25A700693D12 /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901A2BFA25A700693D12 /* MyPostsView.swift */; };
 		721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */; };
 		722DAAC82BF8903B00FE703D /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DAAC72BF8903B00FE703D /* AddPostView.swift */; };
@@ -25,6 +33,8 @@
 		7230F7942BF209B5000BA6E1 /* FishDetaisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230F7932BF209B5000BA6E1 /* FishDetaisView.swift */; };
 		724DDCFB2B9C63050088879F /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DDCFA2B9C63050088879F /* WebServices.swift */; };
 		724DDCFE2B9C6FBD0088879F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DDCFD2B9C6FBD0088879F /* LoginViewModel.swift */; };
+		725135E92C18D3B300A2A239 /* AdminProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725135E82C18D3B300A2A239 /* AdminProfileView.swift */; };
+		725135EB2C18DEE500A2A239 /* ReportedPostViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725135EA2C18DEE500A2A239 /* ReportedPostViewItem.swift */; };
 		7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91A2B8406BF00DA1AD0 /* LottieView.swift */; };
 		7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */; };
 		725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A52022BD5350700F3E32D /* MyProdectItem.swift */; };
@@ -32,6 +42,8 @@
 		726714732BC4C09700333B90 /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714722BC4C09700333B90 /* AllProductsViewModel.swift */; };
 		726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714762BC4CC7B00333B90 /* ProductModel.swift */; };
 		7267147A2BC4D97400333B90 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726714792BC4D97400333B90 /* data.swift */; };
+		727190352C1CD70C0011555B /* ReportPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727190342C1CD70C0011555B /* ReportPostsViewModel.swift */; };
+		727190372C1CD9400011555B /* AllReportedPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727190362C1CD9400011555B /* AllReportedPosts.swift */; };
 		7274DEA22BE4DB69008212B4 /* MainTabCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DEA12BE4DB69008212B4 /* MainTabCustom.swift */; };
 		727D220F2B729BD70079FE9E /* Fish_BookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D220E2B729BD70079FE9E /* Fish_BookApp.swift */; };
 		727D22112B729BD70079FE9E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D22102B729BD70079FE9E /* WelcomeView.swift */; };
@@ -45,6 +57,9 @@
 		727D223D2B72B2BD0079FE9E /* RegestrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D223C2B72B2BD0079FE9E /* RegestrationView.swift */; };
 		7284103D2BC722E9004FB570 /* MainTapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284103C2BC722E9004FB570 /* MainTapp.swift */; };
 		7284103F2BC75993004FB570 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284103E2BC75993004FB570 /* ProductDetailsView.swift */; };
+		728977EA2C1CECE20089AB45 /* ReportedProoductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728977E92C1CECE20089AB45 /* ReportedProoductViewModel.swift */; };
+		728977EC2C1CEDC80089AB45 /* ReportedProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728977EB2C1CEDC80089AB45 /* ReportedProductItemView.swift */; };
+		728977EE2C1CEFEF0089AB45 /* AllReportedProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728977ED2C1CEFEF0089AB45 /* AllReportedProductsView.swift */; };
 		7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290071C2BA8A8C100FEA563 /* ShopView.swift */; };
 		7290071F2BA8AA6600FEA563 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290071E2BA8AA6600FEA563 /* SearchTextField.swift */; };
 		729007212BA8AAA900FEA563 /* PasswordText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729007202BA8AAA900FEA563 /* PasswordText.swift */; };
@@ -109,6 +124,14 @@
 		7208FD9F2B910F990040313D /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		7208FDA32B911F270040313D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		7218AE842C17448C00009983 /* FriendProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileModel.swift; sourceTree = "<group>"; };
+		7218AE862C17451D00009983 /* FriendProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewModel.swift; sourceTree = "<group>"; };
+		7218AE882C17461200009983 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
+		7218AE8A2C175D3E00009983 /* FriendPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostsViewModel.swift; sourceTree = "<group>"; };
+		7218AE8C2C175E5A00009983 /* FriendPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostsView.swift; sourceTree = "<group>"; };
+		7218AE8E2C177FDB00009983 /* FriendProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProductViewModel.swift; sourceTree = "<group>"; };
+		7218AE922C17814600009983 /* FriendPrroductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPrroductItemView.swift; sourceTree = "<group>"; };
+		7218AE942C17833400009983 /* FrriendAllPrroducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrriendAllPrroducts.swift; sourceTree = "<group>"; };
 		721F901A2BFA25A700693D12 /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
 		721F901C2BFA27A100693D12 /* MyPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsViewModel.swift; sourceTree = "<group>"; };
 		722DAAC72BF8903B00FE703D /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
@@ -123,6 +146,8 @@
 		7230F7932BF209B5000BA6E1 /* FishDetaisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetaisView.swift; sourceTree = "<group>"; };
 		724DDCFA2B9C63050088879F /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		724DDCFD2B9C6FBD0088879F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		725135E82C18D3B300A2A239 /* AdminProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileView.swift; sourceTree = "<group>"; };
+		725135EA2C18DEE500A2A239 /* ReportedPostViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPostViewItem.swift; sourceTree = "<group>"; };
 		7259F91A2B8406BF00DA1AD0 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		7259F91C2B8411C800DA1AD0 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		725A52022BD5350700F3E32D /* MyProdectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProdectItem.swift; sourceTree = "<group>"; };
@@ -130,6 +155,8 @@
 		726714722BC4C09700333B90 /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
 		726714762BC4CC7B00333B90 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		726714792BC4D97400333B90 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		727190342C1CD70C0011555B /* ReportPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPostsViewModel.swift; sourceTree = "<group>"; };
+		727190362C1CD9400011555B /* AllReportedPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReportedPosts.swift; sourceTree = "<group>"; };
 		7274DEA12BE4DB69008212B4 /* MainTabCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCustom.swift; sourceTree = "<group>"; };
 		727D220B2B729BD70079FE9E /* Fish Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fish Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727D220E2B729BD70079FE9E /* Fish_BookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish_BookApp.swift; sourceTree = "<group>"; };
@@ -146,6 +173,9 @@
 		727D223C2B72B2BD0079FE9E /* RegestrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegestrationView.swift; sourceTree = "<group>"; };
 		7284103C2BC722E9004FB570 /* MainTapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapp.swift; sourceTree = "<group>"; };
 		7284103E2BC75993004FB570 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		728977E92C1CECE20089AB45 /* ReportedProoductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedProoductViewModel.swift; sourceTree = "<group>"; };
+		728977EB2C1CEDC80089AB45 /* ReportedProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedProductItemView.swift; sourceTree = "<group>"; };
+		728977ED2C1CEFEF0089AB45 /* AllReportedProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReportedProductsView.swift; sourceTree = "<group>"; };
 		7290071C2BA8A8C100FEA563 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		7290071E2BA8AA6600FEA563 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		729007202BA8AAA900FEA563 /* PasswordText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordText.swift; sourceTree = "<group>"; };
@@ -243,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				72FCD9FC2BCCF6A500A896FD /* ProfileView.swift */,
+				7218AE882C17461200009983 /* FriendProfileView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -260,6 +291,8 @@
 				729DF9A52BCE4737003D4165 /* ProductSFavView.swift */,
 				725A52022BD5350700F3E32D /* MyProdectItem.swift */,
 				72D091992BD7C3C80046789B /* MyProductsView.swift */,
+				7218AE922C17814600009983 /* FriendPrroductItemView.swift */,
+				7218AE942C17833400009983 /* FrriendAllPrroducts.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -300,8 +333,25 @@
 				72D324CE2C150217009277C8 /* AddCoommentViewModel.swift */,
 				72D324D02C150538009277C8 /* AllCommentViewModel.swift */,
 				7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */,
+				7218AE862C17451D00009983 /* FriendProfileViewModel.swift */,
+				7218AE8A2C175D3E00009983 /* FriendPostsViewModel.swift */,
+				7218AE8E2C177FDB00009983 /* FriendProductViewModel.swift */,
+				727190342C1CD70C0011555B /* ReportPostsViewModel.swift */,
+				728977E92C1CECE20089AB45 /* ReportedProoductViewModel.swift */,
 			);
 			path = " View Models";
+			sourceTree = "<group>";
+		};
+		725135E72C18D39300A2A239 /* Admin View */ = {
+			isa = PBXGroup;
+			children = (
+				725135E82C18D3B300A2A239 /* AdminProfileView.swift */,
+				725135EA2C18DEE500A2A239 /* ReportedPostViewItem.swift */,
+				727190362C1CD9400011555B /* AllReportedPosts.swift */,
+				728977EB2C1CEDC80089AB45 /* ReportedProductItemView.swift */,
+				728977ED2C1CEFEF0089AB45 /* AllReportedProductsView.swift */,
+			);
+			path = "Admin View";
 			sourceTree = "<group>";
 		};
 		725E83CF2BF78F7A004787EC /* Post */ = {
@@ -314,6 +364,7 @@
 				72D324C02C14B1E0009277C8 /* PostView.swift */,
 				72D324C62C14D138009277C8 /* AllCommentsView.swift */,
 				72D324C82C14F72A009277C8 /* CommentView.swift */,
+				7218AE8C2C175E5A00009983 /* FriendPostsView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -321,6 +372,7 @@
 		726714742BC4C13100333B90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				725135E72C18D39300A2A239 /* Admin View */,
 				7218AE812C159DE000009983 /* ProfileView */,
 				725E83CF2BF78F7A004787EC /* Post */,
 				7230F78E2BF1FB8F000BA6E1 /* Fish */,
@@ -348,6 +400,7 @@
 				7230F7892BF1F911000BA6E1 /* FishModel.swift */,
 				722DAAC92BF89AAD00FE703D /* PostModel.swift */,
 				72D324CC2C14FF86009277C8 /* CommentModel.swift */,
+				7218AE842C17448C00009983 /* FriendProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -693,6 +746,7 @@
 				7290071F2BA8AA6600FEA563 /* SearchTextField.swift in Sources */,
 				72D0919C2BD7D7930046789B /* UpdateProductView.swift in Sources */,
 				7230F78D2BF1FAE5000BA6E1 /* FishViewModel.swift in Sources */,
+				728977EE2C1CEFEF0089AB45 /* AllReportedProductsView.swift in Sources */,
 				72FD90772BA6146600501FBC /* AddProductView.swift in Sources */,
 				72F5F3B52B9F5BFF00269998 /* SignUpViewModel.swift in Sources */,
 				725E83D12BF78FA1004787EC /* MyPostView.swift in Sources */,
@@ -701,11 +755,14 @@
 				729007212BA8AAA900FEA563 /* PasswordText.swift in Sources */,
 				72D091A02BD800300046789B /* AuthenticationModeel.swift in Sources */,
 				7284103D2BC722E9004FB570 /* MainTapp.swift in Sources */,
+				7218AE852C17448C00009983 /* FriendProfileModel.swift in Sources */,
 				72E8799F2BDE430800258CF6 /* UserInfoModel.swift in Sources */,
 				727D22112B729BD70079FE9E /* WelcomeView.swift in Sources */,
 				725A52032BD5350700F3E32D /* MyProdectItem.swift in Sources */,
+				7218AE8D2C175E5A00009983 /* FriendPostsView.swift in Sources */,
 				726714772BC4CC7B00333B90 /* ProductModel.swift in Sources */,
 				7218AE832C15A1CC00009983 /* UserProfileViewModel.swift in Sources */,
+				727190372C1CD9400011555B /* AllReportedPosts.swift in Sources */,
 				7230F7922BF1FEE4000BA6E1 /* AllFishesView.swift in Sources */,
 				7230F78A2BF1F911000BA6E1 /* FishModel.swift in Sources */,
 				729007232BA8AB2200FEA563 /* EmailText.swift in Sources */,
@@ -716,6 +773,7 @@
 				722DAACA2BF89AAD00FE703D /* PostModel.swift in Sources */,
 				724DDCFE2B9C6FBD0088879F /* LoginViewModel.swift in Sources */,
 				7284103F2BC75993004FB570 /* ProductDetailsView.swift in Sources */,
+				725135E92C18D3B300A2A239 /* AdminProfileView.swift in Sources */,
 				72CD7F662BC707150076618C /* ProduuctItemHeaderView.swift in Sources */,
 				727D223D2B72B2BD0079FE9E /* RegestrationView.swift in Sources */,
 				7267147A2BC4D97400333B90 /* data.swift in Sources */,
@@ -726,28 +784,38 @@
 				72A61DDD2BAD9DA7002FEA85 /* AddProductViewModel.swift in Sources */,
 				722DAAC82BF8903B00FE703D /* AddPostView.swift in Sources */,
 				72D324C92C14F72A009277C8 /* CommentView.swift in Sources */,
+				7218AE932C17814600009983 /* FriendPrroductItemView.swift in Sources */,
+				728977EA2C1CECE20089AB45 /* ReportedProoductViewModel.swift in Sources */,
 				72D324CD2C14FF86009277C8 /* CommentModel.swift in Sources */,
 				7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */,
 				721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */,
+				728977EC2C1CEDC80089AB45 /* ReportedProductItemView.swift in Sources */,
+				7218AE952C17833400009983 /* FrriendAllPrroducts.swift in Sources */,
 				722DAACC2BF89B0900FE703D /* AddPostViewModel.swift in Sources */,
 				72D0919A2BD7C3C80046789B /* MyProductsView.swift in Sources */,
 				72D324D12C150538009277C8 /* AllCommentViewModel.swift in Sources */,
+				7218AE8F2C177FDB00009983 /* FriendProductViewModel.swift in Sources */,
 				72A61DDF2BADC998002FEA85 /* ImagePicker.swift in Sources */,
 				722DAAD02BF9DB7200FE703D /* AllPostsView.swift in Sources */,
 				72E879A12BDE43DC00258CF6 /* UpdateUserInfoView.swift in Sources */,
 				72D324C12C14B1E0009277C8 /* PostView.swift in Sources */,
 				727D22392B729C0B0079FE9E /* Validations.swift in Sources */,
+				7218AE892C17461200009983 /* FriendProfileView.swift in Sources */,
 				72FCD9FD2BCCF6A500A896FD /* ProfileView.swift in Sources */,
 				7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */,
+				7218AE872C17451D00009983 /* FriendProfileViewModel.swift in Sources */,
 				7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */,
 				729DF9A22BCE14C6003D4165 /* FavouriteProductItem.swift in Sources */,
 				727D223B2B72B2580079FE9E /* LoginView.swift in Sources */,
 				72D973012BF4CBBF00B8C7AA /* UpdateProductViewModel.swift in Sources */,
 				727D220F2B729BD70079FE9E /* Fish_BookApp.swift in Sources */,
+				725135EB2C18DEE500A2A239 /* ReportedPostViewItem.swift in Sources */,
+				7218AE8B2C175D3E00009983 /* FriendPostsViewModel.swift in Sources */,
 				724DDCFB2B9C63050088879F /* WebServices.swift in Sources */,
 				72D324CF2C150217009277C8 /* AddCoommentViewModel.swift in Sources */,
 				7259F91D2B8411C800DA1AD0 /* SplashScreenView.swift in Sources */,
 				72B9454B2B8538370021D718 /* AllowNotificationView.swift in Sources */,
+				727190352C1CD70C0011555B /* ReportPostsViewModel.swift in Sources */,
 				72E879A32BDE5B6F00258CF6 /* UpdateUserInfoViewModel.swift in Sources */,
 				72D324CB2C14FD1E009277C8 /* AppDelegate.swift in Sources */,
 				7230F7942BF209B5000BA6E1 /* FishDetaisView.swift in Sources */,

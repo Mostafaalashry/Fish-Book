@@ -14,6 +14,7 @@ struct ProductDetailsView: View {
     
     @EnvironmentObject var vm :AllProductViewModel
     @State var product:ProductModel
+    
     @State  var isFavourite:Bool
   
     init(isAnimated: Bool = false, product: ProductModel, isFavourite: Bool) {
@@ -76,27 +77,36 @@ struct ProductDetailsView: View {
                 }
                 .padding(.leading,22)
                 HStack{
-                    
-                    if product.imageUrl == nil || product.imageUrl==""{
-                        Image(systemName: "person.crop.circle.fill")
-                             .resizable()
-                             .scaledToFill()
-                             .frame(width: 40,height: 40)
-                             .foregroundColor(Color("gray"))
-                    }
-                    else{
+                    NavigationLink {
                         
-                        WebImage(url: URL(string: product.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40,height: 40)
-                            .foregroundColor(Color("gray"))
-                            .clipShape(Circle())
+                        FriendProfileView(id: Int(product.publisherId) )
+                        
+                    } label: {
+                        if product.imageUrl == nil || product.imageUrl==""{
+                            Image(systemName: "person.crop.circle.fill")
+                                 .resizable()
+                                 .scaledToFill()
+                                 .frame(width: 40,height: 40)
+                                 .foregroundColor(Color("gray"))
+                        }
+                        else{
+                            
+                            WebImage(url: URL(string: product.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40,height: 40)
+                                .foregroundColor(Color("gray"))
+                                .clipShape(Circle())
+                        }
+                        
+                      
+                        
+                        Text(product.publisherName)
                     }
+
                     
-                  
+                   
                     
-                    Text(product.publisherName)
                     Spacer()
                     
                 }
@@ -146,6 +156,7 @@ struct ProductDetailsView: View {
                         
                        
                     } label: {
+                        
                         Text(isFavourite ?  "remove from favourite" : "Add to favourite" )
                             .foregroundColor(Color.white)
                             .font(.system(size: 18,weight: .bold,design: .serif))

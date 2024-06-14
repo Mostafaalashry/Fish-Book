@@ -1,34 +1,35 @@
 //
-//  MyPostsViewModel.swift
+//  ReportedProoductViewModel.swift
 //  Fish Book
 //
-//  Created by mostafa on 19/05/2024.
+//  Created by mostafa on 15/06/2024.
 //
+
+
 
 import Foundation
 import SwiftUI
 
-class MyPostsViewModel : ObservableObject{
+class ReportedProductViewModel : ObservableObject{
     
    // @Published  var products = dataa.allProducts
     
-   //"http://localhost:8080/api/getPostsByUserId/\(Userid)"
-    //"http://localhost:8080/api/posts/getPostsByJwt"
-    @Published   var allPosts :[PostModel] = []
+   
+    @Published   var allReportedProduct :[ReportedProductModel] = []
     
-    func fetchPosts(){
+    func fetchReportedProduct(){
         
-        print("hi switch")
+       
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
         //
-        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/posts/getPostsByJwt", token: token) {
+        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/products/reported", token: token) {
             
-            (result: Result<[PostModel], Error>) in
+            (result: Result<[ReportedProductModel], Error>) in
             switch result {
                
                 case .success(let data):
-                self.allPosts = data
-                   print("all Posts sucesses")
+                self.allReportedProduct = data
+                   print("all Posts reported sucesses")
                 case .failure(let error):
                 print(error.localizedDescription)
                
@@ -36,11 +37,11 @@ class MyPostsViewModel : ObservableObject{
         }
     }
     //
-    func deleteMyPost(post:PostModel){
+    func deleteMyPost(prroduct:ReportedProductModel , apiString : String){
         var index  = 0
-            for postt in allPosts {
-                if postt.id == post.id {
-                    WebServices().sendID(httpMethod:"DELETE",urlString: "http://localhost:8080/api/posts/\(postt.id)", token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
+            for productt in allReportedProduct {
+                if productt.id == prroduct.id {
+                    WebServices().sendID(httpMethod:"DELETE",urlString: apiString, token: UserDefaults.standard.string(forKey: "jsonwebtoken")!) { (result: Result<Int, Error>) in
                         switch result {
                         case .success(let success):
                           
@@ -50,7 +51,7 @@ class MyPostsViewModel : ObservableObject{
                         }
                     }
 
-                    allPosts.remove(at: index)
+                    allReportedProduct.remove(at: index)
                     return // Exit the function after removing the item
                 }
                 index = index + 1

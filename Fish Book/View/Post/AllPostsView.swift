@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct AllPostsView: View {
+    
+    
     @EnvironmentObject var vm : AllPostsViewModel
-    
-    
+
+
     var body: some View {
         NavigationStack{
             ScrollView{

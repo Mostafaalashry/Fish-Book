@@ -1,31 +1,32 @@
 //
-//  AllPostsViewModel.swift
+//  FriendPosts.swift
 //  Fish Book
 //
-//  Created by mostafa on 19/05/2024.
+//  Created by mostafa on 10/06/2024.
 //
-
-
 
 import Foundation
 import SwiftUI
 
-class AllPostsViewModel : ObservableObject{
+
+
+class FriendPostsViewModel : ObservableObject {
  
     @Published   var allPosts :[PostModel] = []
     
-    func fetchPosts(){
+    
+    func fetchPosts(Userid:Int){
         print("hi switch")
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken") ?? ""
         ///getPostsByJwt
-        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/posts", token: token) {
+        WebServices().fetchDataWithToken(urlString: "http://localhost:8080/api/getPostsByUserId/\(Userid)", token: token) {
             
             (result: Result<[PostModel], Error>) in
             switch result {
                
                 case .success(let data):
                 self.allPosts = data
-                   print("all Posts sucesses")
+                   print("all friend posts sucesses")
                 case .failure(let error):
                 print(error.localizedDescription)
                

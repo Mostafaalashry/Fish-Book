@@ -346,6 +346,7 @@ class WebServices {
             } catch {
                 DispatchQueue.main.async {
                     print ("can not decode ")
+                    print(data)
                     completion(.failure(error))
                 }
             }

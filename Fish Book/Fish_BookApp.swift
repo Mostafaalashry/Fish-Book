@@ -20,6 +20,11 @@ struct Fish_BookApp: App {
    
     @StateObject var vmComments = AllCommentsViewModel()
     @StateObject var userProfile = UserProfileViewModel()
+    @StateObject var friendProfile = FriendProfileViewModel()
+    @StateObject var friendPosts = FriendPostsViewModel()
+    @StateObject var friendPrroduct = FriendPrroductViewModel()
+    @StateObject var ReportedPosts  = ReportedPostsViewModel()
+    @StateObject var ReportedProduct  = ReportedProductViewModel()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
@@ -33,6 +38,11 @@ struct Fish_BookApp: App {
                 .environmentObject(vmMyPosts)
                 .environmentObject(vmComments)
                 .environmentObject(userProfile)
+                .environmentObject(friendProfile)
+                .environmentObject(friendPosts)
+                .environmentObject(friendPrroduct)
+                .environmentObject(ReportedPosts)
+                .environmentObject(ReportedProduct)
 
             
         }

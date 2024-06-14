@@ -14,42 +14,50 @@ struct PostView: View {
     @State  var isFavourite:Bool
     @State  var numberOfLikes:Int
     @State  var showAlert = false
-    @EnvironmentObject var vm  : AllPostsViewModel
+    @EnvironmentObject var vm  : FriendPostsViewModel
 
     var body: some View {
         VStack(spacing: 0){
             // WebImage(url: URL(string: product.imageUrl.replacingOccurrences(of: "http://", with: "https://") ?? ""))
-            if post.publisherImageUrl == nil || post.publisherImageUrl == "" {
-                HStack{
-                   Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40,height: 40)
-                        .foregroundColor(Color("lightgray 1"))
-                        .clipShape(Circle())
-                    
-                    Text(post.publisherName)
-                    Spacer()
-                    
+            
+            NavigationLink {
+                FriendProfileView(id: Int(post.publisherId))
+               
+            } label: {
+                if post.publisherImageUrl == nil || post.publisherImageUrl == "" {
+                    HStack{
+                       Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40,height: 40)
+                            .foregroundColor(Color("lightgray 1"))
+                            .clipShape(Circle())
+                        
+                        Text(post.publisherName)
+                        Spacer()
+                        
+                    }
+                    .padding(.leading ,12)
                 }
-                .padding(.leading ,12)
-            }
-            else
-            {
-                HStack{
-                    WebImage(url: URL(string: post.publisherImageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40,height: 40)
-                        .foregroundColor(Color("gray"))
-                        .clipShape(Circle())
-                    
-                    Text(post.publisherName)
-                    Spacer()
-                    
+                else
+                {
+                    HStack{
+                        WebImage(url: URL(string: post.publisherImageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40,height: 40)
+                            .foregroundColor(Color("gray"))
+                            .clipShape(Circle())
+                        
+                        Text(post.publisherName)
+                        Spacer()
+                        
+                    }
+                    .padding(.leading ,12)
                 }
-                .padding(.leading ,12)
             }
+
+           
                 
          
             

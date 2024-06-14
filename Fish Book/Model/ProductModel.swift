@@ -82,3 +82,17 @@ struct UploadPrroductModel:Codable {
         self.imageUrl = imageUrl
     }
 }
+
+struct ReportedProductModel:Codable {
+    var id: Int
+    var title: String
+    var content: String
+    var publisherId: Int
+    var publisherName: String
+    var publisherImage: String?
+    var createdOn: String
+    var price: Double
+    var imageUrl: String?
+    var numberOfReports: Int
+ 
+}

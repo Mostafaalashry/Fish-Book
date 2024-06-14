@@ -77,6 +77,10 @@ struct ProfileView: View {
                         .font(Font.system(size: 14, weight: .semibold))
                    }
                 .padding(.horizontal)
+                
+                
+                
+              
               
             }
             
@@ -100,6 +104,35 @@ struct ProfileView: View {
                         .frame(width: 20, height: 20)
                         .padding(.trailing)
                 }
+                //
+                
+                
+                
+                
+                if vm.userProfile.id  == 1 {
+                   // print("i am an admin")
+                    NavigationLink {
+                        
+                      AdminProfileView()
+                        
+                    } label: {
+                       // Image(systemName: "person.badge.key")
+                        Text("Admin profile")
+                           
+                            //.frame(width: 20, height: 20)
+                            .padding(.horizontal)
+                            .foregroundColor(Color.blue)
+                    }
+
+                    
+                }
+               
+             
+                
+                
+                
+                
+                //
             }
             
             Picker(selection: $selection, label: Text("")) {
@@ -124,6 +157,7 @@ struct ProfileView: View {
         .edgesIgnoringSafeArea(.bottom)
         .onAppear {
             vm.fetchUserProfile()
+            print("this is an id \(vm.userProfile.id)"  )
         }
     }
 }
