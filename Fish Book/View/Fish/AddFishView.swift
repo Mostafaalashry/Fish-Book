@@ -1,16 +1,15 @@
 //
-//  AddPostView.swift
+//  AddFishView.swift
 //  Fish Book
 //
-//  Created by mostafa on 18/05/2024.
+//  Created by mostafa on 15/06/2024.
 //
 
 import SwiftUI
 
-struct AddPostView: View {
-   // let date  = Date()
+struct AddFishView: View {
     
-    @State private var price: String = ""
+    
     @State private var imageURL: String = ""
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
@@ -21,17 +20,19 @@ struct AddPostView: View {
     @State private var alertMessege: String = "ok"
     @Environment(\.dismiss) var dismiss
    
-    @StateObject private var addPostVM = AddPostViewModel()
+    @StateObject private var addFishVM = AddFishViewModel()
+    @State private var fishDetailsList: [FishDeetailsUI] = []
+    @State var numberOfArrayDescription : Int = 1
 
     var body: some View {
        
             
-        VStack{
+    ScrollView{
             HStack{
                 Spacer()
                // Spacer()
 
-                Text(" Add post")
+                Text(" Add Fish")
                     .font(.system(size: 28,weight: .bold))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(
@@ -47,10 +48,12 @@ struct AddPostView: View {
                 Spacer()
                 Button {
                     
-                    addPostVM.content = content
-                    addPostVM.addPost()
+                    addFishVM.name = content
+                    addFishVM.fishDetails = convertToFishDetailsArray(fishDetailsUIList: fishDetailsList)
+                   
+                    addFishVM.addFish()
                     showAlert = true
-                    alertMessege = "the post added Successfully"
+                    alertMessege = "the fish added Successfully"
                    
                     
                 } label: {
@@ -81,15 +84,23 @@ struct AddPostView: View {
               
                
                 VStack{
-                    TextField("Say something", text: $content, axis: .vertical)
-                        .textInputAutocapitalization(.none)
-                    
-                        .disableAutocorrection(true)
-                        .frame(minWidth: 0 ,maxWidth: .infinity)
-                        .padding(15)
-                        .foregroundColor(Color("Primary Blue"))
-                        .multilineTextAlignment(.leading)
-                    
+                    HStack{
+                       Text("Name of fish : ")
+                            .font(.system(size: 17,weight: .bold))
+                            .foregroundColor(Color("Primary Blue"))
+                            
+                        
+                        TextField("Name", text: $content, axis: .vertical)
+                            .textInputAutocapitalization(.none)
+                        
+                            .disableAutocorrection(true)
+                            .frame(minWidth: 0 ,maxWidth: .infinity)
+                            .padding(15)
+                            .foregroundColor(Color("Primary Blue"))
+                            .multilineTextAlignment(.leading)
+                        
+                    }
+                   
              
                 }
             }
@@ -141,22 +152,91 @@ struct AddPostView: View {
                     .sheet(isPresented: $isShowingImagePicker) {
                         ImagePicker(selectedImage: self.$selectedImage)
                     }
+                    
+                
+
                     Spacer()
                 }
               
+        VStack {
+                    ScrollView {
+                        ForEach($fishDetailsList) { $fishDetail in
+                            VStack {
+                                HStack{
+                                    Text("Header")
+                                    TextField("Header", text: $fishDetail.header)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .padding()
+                                }
+                                HStack{
+                                    Text("content")
+                                    VStack {
+                              TextEditor(text: $fishDetail.content)
+                                        .frame(minHeight: 100) // Set a minimum height for
+                                        .padding(15)
+                                     //   .border(Color.gray, width: 1)
+                                        .foregroundColor(Color("Primary Blue"))
+                                        .background(Color(.systemGray6))
+                                                 .cornerRadius(8)
+                                        
+                                   }
+                                    
+                                        
+                                }
+                                Rectangle()
+                                    .frame(height: 1)
+                                    .foregroundColor(Color("Primary Blue"))
+                           
+                                
+                               
+                            }
+                            .padding()
+                        }
+                    }
+            
+            
+            Button {
+                addNewFishDetails()
+                
+                
+                let fishDetailsArray = convertToFishDetailsArray(fishDetailsUIList: fishDetailsList)
+                
+                               
+            
+            } label: {
+                Text("Add Fish Details")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
            
+                
+               }
+            .padding()
+
+                  
+                   
+                }
+   
+           .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea(.all)
+        
+        .padding()
             
           }
         .alert(alertMessege, isPresented: $showAlert) {
             Button("ok",role: .cancel) {
-                if alertMessege == "the post added Successfully" {
+                if alertMessege == "the fish added Successfully" {
                   dismiss()
                 }
                 
             }
         }message: {
             Text("")
+         }
         }
+    private func convertToFishDetailsArray(fishDetailsUIList: [FishDeetailsUI]) -> [FishDeetails] {
+            return fishDetailsUIList.map { FishDeetails(header: $0.header, content: $0.content) }
         }
     func canProssesd() -> Bool{ //check if the password & email is valid
         
@@ -171,7 +251,7 @@ struct AddPostView: View {
                 WebServices().uploadImage(image: image, url: "http://localhost:8080/api/image/uploadProductImage") { result in
                     switch result {
                     case .success(let imageurl):
-                        addPostVM.imageUrl = imageurl
+                        addFishVM.imageUrl = imageurl
                     case .failure(let erorr):
                         print(erorr.localizedDescription)
                     }
@@ -185,14 +265,16 @@ struct AddPostView: View {
             }
       //  }
      }
- }
+    
+    private func addNewFishDetails() {
+           let newFishDetails = FishDeetailsUI(header: "", content: "")
+           fishDetailsList.append(newFishDetails)
+        print(fishDetailsList)
+       }
+}
 
-/*
- 
- struct AddPostView_Previews: PreviewProvider {
-     static var previews: some View {
-         AddPostView()
-     }
- }
- */
-
+struct AddFishView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddFishView()
+    }
+}

@@ -18,6 +18,7 @@ struct FishDetaisView: View {
            // Image((fish.imageUrl)!)
                 .resizable()
                 .scaledToFit()
+                .cornerRadius(10)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3.5,alignment: .center)
                 .offset(x: 0 ,y: isAnimated ? 0 : 30)
                 .onAppear{

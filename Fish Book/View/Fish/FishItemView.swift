@@ -22,16 +22,21 @@ struct FishItemView: View {
                     .foregroundColor(Color.black)
                     .padding(.horizontal)
                     .padding(.top,5)
+                    .multilineTextAlignment(.leading)
 
             }
-            
+            .padding(.leading)
+            Spacer()
             WebImage(url: URL(string: fish.imageUrl!.replacingOccurrences(of: "http://", with: "https://") ?? ""))
            // Image(fish.imageUrl ?? "firstScreen")
+                
                 .resizable()
                 .scaledToFit()
+                .cornerRadius(7)
                 .frame(width: 150 , height: 150 ,alignment: .center)
                 .scaledToFit()
-                .cornerRadius(7)
+               
+                .padding(.trailing)
             
 
         }

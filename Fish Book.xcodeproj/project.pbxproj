@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7201C8A42C1DA5480084169F /* AddFishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201C8A32C1DA5480084169F /* AddFishView.swift */; };
 		7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FD9F2B910F990040313D /* ForecastResponse.swift */; };
 		7208FDA42B911F270040313D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208FDA32B911F270040313D /* WeatherView.swift */; };
 		7208FDA72B913E800040313D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7208FDA62B913E800040313D /* SDWebImageSwiftUI */; };
@@ -74,6 +75,7 @@
 		729DF9A62BCE4737003D4165 /* ProductSFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DF9A52BCE4737003D4165 /* ProductSFavView.swift */; };
 		72A61DDD2BAD9DA7002FEA85 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A61DDC2BAD9DA7002FEA85 /* AddProductViewModel.swift */; };
 		72A61DDF2BADC998002FEA85 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A61DDE2BADC998002FEA85 /* ImagePicker.swift */; };
+		72AA1ECE2C1DB93D00C93526 /* AddFishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA1ECD2C1DB93D00C93526 /* AddFishViewModel.swift */; };
 		72B9454B2B8538370021D718 /* AllowNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9454A2B8538360021D718 /* AllowNotificationView.swift */; };
 		72CD7F662BC707150076618C /* ProduuctItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7F652BC707150076618C /* ProduuctItemHeaderView.swift */; };
 		72D091982BD7BBA60046789B /* MyProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D091972BD7BBA60046789B /* MyProductViewModel.swift */; };
@@ -121,6 +123,7 @@
 		210B6A7EEFC7D968E985365C /* Pods_Fish_BookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_BookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CB37A20DB19F4882D4CDDF /* Pods-Fish Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish Book.debug.xcconfig"; path = "Target Support Files/Pods-Fish Book/Pods-Fish Book.debug.xcconfig"; sourceTree = "<group>"; };
 		40342627ECA2CC1458FA30D3 /* Pods_Fish_Book_Fish_BookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish_Book_Fish_BookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7201C8A32C1DA5480084169F /* AddFishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFishView.swift; sourceTree = "<group>"; };
 		7208FD9F2B910F990040313D /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		7208FDA32B911F270040313D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		7218AE822C15A1CC00009983 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 		729DF9A52BCE4737003D4165 /* ProductSFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSFavView.swift; sourceTree = "<group>"; };
 		72A61DDC2BAD9DA7002FEA85 /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		72A61DDE2BADC998002FEA85 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		72AA1ECD2C1DB93D00C93526 /* AddFishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFishViewModel.swift; sourceTree = "<group>"; };
 		72B9454A2B8538360021D718 /* AllowNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowNotificationView.swift; sourceTree = "<group>"; };
 		72CD7F652BC707150076618C /* ProduuctItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduuctItemHeaderView.swift; sourceTree = "<group>"; };
 		72D091972BD7BBA60046789B /* MyProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductViewModel.swift; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 				7230F78F2BF1FBB4000BA6E1 /* FishItemView.swift */,
 				7230F7912BF1FEE4000BA6E1 /* AllFishesView.swift */,
 				7230F7932BF209B5000BA6E1 /* FishDetaisView.swift */,
+				7201C8A32C1DA5480084169F /* AddFishView.swift */,
 			);
 			path = Fish;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				7218AE8E2C177FDB00009983 /* FriendProductViewModel.swift */,
 				727190342C1CD70C0011555B /* ReportPostsViewModel.swift */,
 				728977E92C1CECE20089AB45 /* ReportedProoductViewModel.swift */,
+				72AA1ECD2C1DB93D00C93526 /* AddFishViewModel.swift */,
 			);
 			path = " View Models";
 			sourceTree = "<group>";
@@ -789,6 +795,7 @@
 				72D324CD2C14FF86009277C8 /* CommentModel.swift in Sources */,
 				7290071D2BA8A8C100FEA563 /* ShopView.swift in Sources */,
 				721F901D2BFA27A100693D12 /* MyPostsViewModel.swift in Sources */,
+				72AA1ECE2C1DB93D00C93526 /* AddFishViewModel.swift in Sources */,
 				728977EC2C1CEDC80089AB45 /* ReportedProductItemView.swift in Sources */,
 				7218AE952C17833400009983 /* FrriendAllPrroducts.swift in Sources */,
 				722DAACC2BF89B0900FE703D /* AddPostViewModel.swift in Sources */,
@@ -803,6 +810,7 @@
 				7218AE892C17461200009983 /* FriendProfileView.swift in Sources */,
 				72FCD9FD2BCCF6A500A896FD /* ProfileView.swift in Sources */,
 				7208FDA02B910F990040313D /* ForecastResponse.swift in Sources */,
+				7201C8A42C1DA5480084169F /* AddFishView.swift in Sources */,
 				7218AE872C17451D00009983 /* FriendProfileViewModel.swift in Sources */,
 				7259F91B2B8406BF00DA1AD0 /* LottieView.swift in Sources */,
 				729DF9A22BCE14C6003D4165 /* FavouriteProductItem.swift in Sources */,

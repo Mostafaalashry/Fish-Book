@@ -108,38 +108,43 @@ struct AdminProfileView: View {
                 
                 
                 
-                
-                HStack{
-                    
-                    VStack(alignment: .trailing, spacing: 0){
-                        Text("manage fishes ")
-                            .font(Font.system(size: 26, weight: .bold))
-                            .multilineTextAlignment(.center)
-                           // .foregroundStyle(Color.white)
-                            
-                            .frame(alignment: .top)
-                        Text("you can add fish, update fish inforrmation or dellete fish  ")
-                            .font(Font.system(size: 18, weight: .light))
-                            .multilineTextAlignment(.center)
-                           // .foregroundStyle(Color.white)
-                            .padding(.bottom)
-                            .frame(alignment: .top)
-                            .multilineTextAlignment(.trailing)
-                             
-                    }
-                    
-                    
-                    Image(systemName: "fish")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70)
-                        .padding(15)
-                        .background(Color.gray.cornerRadius(15))
-                        .foregroundColor(Color("dark1"))
+                NavigationLink {
+                    AddFishView()
+                } label: {
+                    HStack{
                         
-                    
+                        VStack(alignment: .trailing, spacing: 0){
+                            Text("manage fishes ")
+                                .font(Font.system(size: 26, weight: .bold))
+                                .multilineTextAlignment(.center)
+                               // .foregroundStyle(Color.white)
+                                
+                                .frame(alignment: .top)
+                            Text("you can add fish, update fish inforrmation or dellete fish  ")
+                                .font(Font.system(size: 18, weight: .light))
+                                .multilineTextAlignment(.center)
+                               // .foregroundStyle(Color.white)
+                                .padding(.bottom)
+                                .frame(alignment: .top)
+                                .multilineTextAlignment(.trailing)
+                                 
+                        }
+                        
+                        
+                        Image(systemName: "fish")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70)
+                            .padding(15)
+                            .background(Color.gray.cornerRadius(15))
+                            .foregroundColor(Color("dark1"))
+                            
+                        
+                    }
+                    .padding()
                 }
-                .padding()
+                .foregroundColor(Color.black)
+             
             }
             .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height/2)
             .background(Color("SecondaryBlue"))
